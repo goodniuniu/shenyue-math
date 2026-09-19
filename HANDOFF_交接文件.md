@@ -47,6 +47,7 @@
   复盘追踪/{知识掌握状态表,艾宾浩斯复习日历_国庆起}.md
 build_site.py                          # Markdown → docs/ 静态站
 build_print_pack.py                    # 知识卡片 → 打印包/国庆打印包_数学.pdf（reportlab）
+build_preview.py                       # 打印包 PDF → 打印包/预览_contact-sheet.png（PDF 更新后重跑）
 extract_exams.py                       # 真题 PDF 批量提取文本到 提取文本/
 打印包/                                # 打印包 PDF + 预览_contact-sheet.png
 docs/                                  # 生成的网站（GitHub Pages 发布此目录，含 .nojekyll）
