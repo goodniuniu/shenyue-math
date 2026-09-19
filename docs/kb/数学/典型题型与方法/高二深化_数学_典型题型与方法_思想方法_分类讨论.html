@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【思想方法 · 分类讨论】情况不止一种时，分开算、合并答 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【思想方法 · 分类讨论】情况不止一种时，分开算、合并答">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【思想方法 · 分类讨论】情况不止一种时，分开算、合并答</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>四大数学思想之一；2025.10 四校真题应用（华附 8/19、广附 16、铁一 12、执信 15）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>一句话</strong>：当题目因参数、位置或形状不同而有多种可能时，按「不重不漏」的原则把情况分开，每种情况单独求解，最后合并作答。</p>
+<p><strong>当前学期的讨论触发器（见到就警觉）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>触发信号</th>
+<th>为什么要讨论</th>
+<th>常见分法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直线斜率「是否存在」</td>
+<td>竖直线没有斜率，公式直接失效</td>
+<td>竖直 / 非竖直两类</td>
+</tr>
+<tr>
+<td>含参数 $a$ 的系数</td>
+<td>$a=0$ 时常让整个式子变性（二次退化为一次）</td>
+<td>系数为零 / 不为零</td>
+</tr>
+<tr>
+<td>点与直线、点与圆的位置关系</td>
+<td>位置不同，距离公式用法与最值结论不同</td>
+<td>同侧 / 异侧；圆内 / 圆上 / 圆外</td>
+</tr>
+<tr>
+<td>截距式、对称点问题</td>
+<td>「截距相等」包含过原点这种隐藏特例</td>
+<td>过原点 / 不过原点</td>
+</tr>
+<tr>
+<td>向量夹角与投影</td>
+<td>夹角是锐角还是钝角决定符号</td>
+<td>锐角 / 直角 / 钝角</td>
+</tr>
+<tr>
+<td>翻折、动点问题</td>
+<td>动点在不同边上、翻折方向不同，图形本质不同</td>
+<td>按动点所在边/区间分段</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用仪式（四步）</strong>：①找分界：什么值会让情况发生质变；②排顺序：按参数轴从左到右列情况；③逐段求解：每段用该段的公式；④合并检验：各段答案是否都满足本段前提，分界点单独验证。</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>这就像<strong>分情况点菜</strong>：「今天吃什么」取决于下没下雨——下雨点外卖，不下雨去食堂。如果只想一种方案，天气一变就饿肚子。数学里的参数就像天气，题目不告诉你它取什么值，你就得把几种「天气」分别安排明白，最后说一句「如果这样就……，如果那样就……」。孩子最常丢分的地方不是不会算，而是<strong>漏了一种情况</strong>——比如用斜率公式时忘了竖直线没有斜率，或者忘了「截距相等」还包括两条截距都是 0 的直线。提醒一句：<strong>列公式之前先问，这个公式有没有用不了的情形？</strong></p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（截距陷阱原型）：求过点 $P(2,1)$ 且在两坐标轴上截距相等的直线方程。</p>
+</blockquote>
+<ol>
+<li><strong>找分界</strong>：截距式 $\dfrac{x}{a}+\dfrac{y}{a}=1$ 只在 $a\neq0$ 时能用 → 分「截距为 0」与「截距不为 0」</li>
+<li><strong>情况一（不过原点，$a\neq0$）</strong>：设 $\dfrac{x}{a}+\dfrac{y}{a}=1$，代入 $P(2,1)$：$\dfrac{3}{a}=1$，$a=3$，直线为 $x+y-3=0$</li>
+<li><strong>情况二（过原点）</strong>：截距都为 0，直线过 $(0,0)$ 与 $(2,1)$，斜率 $\dfrac{1}{2}$，即 $x-2y=0$</li>
+<li><strong>合并检验</strong>：两条都过 $P(2,1)$ 且截距相等 ✓。答：$x+y-3=0$ 或 $x-2y=0$（漏掉第二条是本题经典错因）</li>
+</ol>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 能背出本学期至少 4 个「讨论触发器」</li>
+<li>[ ] 用斜率/截距式之前会条件反射检查公式失效情形</li>
+<li>[ ] 分段求解后会回验「这个答案满足本段的前提吗」</li>
+<li>[ ] 能在卷面上写出完整的「当……时；当……时；综上」结构</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="../%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90_%E7%A9%BA%E9%97%B4%E5%90%91%E9%87%8F%E4%B8%8E%E7%AB%8B%E5%87%A0%E5%B8%B8%E8%A7%81%E9%99%B7%E9%98%B1.html">空间向量与立几常见陷阱</a> — 陷阱卡里多处本质是漏讨论</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E7%9B%B4%E7%BA%BF%E9%97%AE%E9%A2%98%E9%A2%98%E5%9E%8B%E5%BD%92%E7%BA%B3.html">直线问题题型归纳</a> — 截距、对称、相交问题的讨论主场</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B9%E7%A8%8B.html">函数与方程</a> — 方程含参时两卡联用</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E6%95%B0%E5%BD%A2%E7%BB%93%E5%90%88.html">数形结合</a> — 画图能直观看出「情况不止一种」</li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>四大思想第二批建卡（2026-09-19）：本卡 + 函数与方程，与首批数形结合、转化化归齐套。</li>
+<li>讨论分界点容易丢：月考后把「漏讨论」错题回链到本卡，标注漏的是哪一段。</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

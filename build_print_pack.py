@@ -289,7 +289,7 @@ story.append(Spacer(1, 1.2 * cm))
 cover_items = [
     "第一部分　概念检验：空间向量与直线过关 30 问（判断 20 + 填空 10，含答案）",
     "第二部分　陷阱清单：空间向量与立几常见陷阱 10 条（考前 10 分钟只看这个）",
-    "第三部分　思想方法速查两表：数形结合翻译表 / 转化化归方向表",
+    "第三部分　思想方法速查四表：数形结合翻译表 / 转化化归方向表 / 函数与方程设元表 / 分类讨论触发器表",
     "第四部分　公式默写页：空间向量 + 直线核心公式（留空自测，附答案）",
     "第五部分　家长提问卡 30 问：照原话问、看关键词打钩（每天睡前 15 分钟）",
 ]
@@ -298,7 +298,7 @@ for it in cover_items:
         "ci", parent=S["body"], fontSize=11.5, leading=20, alignment=1)))
 story.append(Spacer(1, 1.0 * cm))
 story.append(Paragraph(conv("用法：检验卷与默写页先做题后对答案（答案区在后半部分），错题回知识库对应卡片补课；"
-                            "陷阱清单与速查两表贴在书桌前，碎片时间扫一眼。"), S["note"]))
+                            "陷阱清单与速查四表贴在书桌前，碎片时间扫一眼。"), S["note"]))
 story.append(PageBreak())
 
 # 第一部分：概念检验 30 问
@@ -356,8 +356,8 @@ for name, path in TRAP_CARDS:
 
 story.append(PageBreak())
 
-# 第三部分：思想方法速查两表
-story.append(Paragraph("第三部分　思想方法速查两表", S["h1"]))
+# 第三部分：思想方法速查四表
+story.append(Paragraph("第三部分　思想方法速查四表", S["h1"]))
 
 
 def grab_table(path, header_keyword):
@@ -380,8 +380,21 @@ t = grab_table(METHOD / "高二深化_数学_典型题型与方法_思想方法_
 story.append(Paragraph("表 2　转化化归方向表（把不会的题变成会的题）", S["h2"]))
 story.append(three_line_table(t, [4.4 * cm, 6.4 * cm, 5.2 * cm]))
 story.append(Spacer(1, 8))
-story.append(Paragraph(conv("两个使用仪式：卡壳先问「这个式子像什么几何量」（数形结合）；"
-                            "再问「它能兑换成我学过的什么」（转化化归）。兑换成功，难题变熟题。"), S["note"]))
+
+# 表3 函数与方程
+t = grab_table(METHOD / "高二深化_数学_典型题型与方法_思想方法_函数与方程.md", "设谁")
+story.append(Paragraph("表 3　函数与方程设元表（求谁设谁，条件列方程）", S["h2"]))
+story.append(three_line_table(t, [4.6 * cm, 4.6 * cm, 6.8 * cm]))
+story.append(Spacer(1, 8))
+
+# 表4 分类讨论
+t = grab_table(METHOD / "高二深化_数学_典型题型与方法_思想方法_分类讨论.md", "触发信号")
+story.append(Paragraph("表 4　分类讨论触发器表（见到这些信号就警觉：情况不止一种）", S["h2"]))
+story.append(three_line_table(t, [4.6 * cm, 6.0 * cm, 5.4 * cm]))
+story.append(Spacer(1, 8))
+story.append(Paragraph(conv("四个使用仪式：卡壳先问「这个式子像什么几何量」（数形结合）；"
+                            "再问「它能兑换成我学过的什么」（转化化归）；求谁就把谁设成未知数（函数与方程）；"
+                            "列公式前先问有没有用不了的情形（分类讨论）。"), S["note"]))
 
 story.append(PageBreak())
 

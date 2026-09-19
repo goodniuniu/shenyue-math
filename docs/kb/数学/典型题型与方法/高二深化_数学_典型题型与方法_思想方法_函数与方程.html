@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【思想方法 · 函数与方程】求谁设谁，条件列方程 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【思想方法 · 函数与方程】求谁设谁，条件列方程">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【思想方法 · 函数与方程】求谁设谁，条件列方程</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>四大数学思想之一；2025.10 四校真题应用（华附 11/18、广附 8/17、执信 16、铁一 15）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>一句话</strong>：题目要求的量设为未知数，把题目条件一条条翻译成方程（组），解出来就是答案——条件有几个独立等式，就能求几个未知数。</p>
+<p><strong>当前学期的高频战场</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>设谁</th>
+<th>方程从哪来</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>求直线方程</td>
+<td>斜率 $k$ 与截距 $b$（或两点式坐标）</td>
+<td>一个条件列一个方程：过点 → 代入；垂直 → 斜率乘积 $-1$；距离 → 距离公式</td>
+</tr>
+<tr>
+<td>动点轨迹/定点问题</td>
+<td>动点坐标 $(x,y)$</td>
+<td>把「距离相等」「垂直」「中点」等条件翻译成 $x,y$ 的等式</td>
+</tr>
+<tr>
+<td>含参直线恒过定点</td>
+<td>定点 $(x_0,y_0)$</td>
+<td>按参数 $m$ 整理成 $A+mB=0$，令 $A=0$ 且 $B=0$ 联立</td>
+</tr>
+<tr>
+<td>向量建系后求点坐标</td>
+<td>该点坐标分量</td>
+<td>长度条件、垂直条件、共面条件各出一个方程</td>
+</tr>
+<tr>
+<td>最值问题</td>
+<td>目标量写成某变量的函数 $f(x)$</td>
+<td>定义域来自几何约束，再用单调性/基本不等式求最值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用仪式</strong>：读题时每看到一个条件就问自己「它能写成关于未知数的哪个等式」。条件用完方程不够，多半是漏了隐含条件（相切、共线、点在图形内部）。</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>这就像<strong>破案拼图</strong>：要求的答案是「失踪的人」，每条题目条件都是一条线索，一条线索能锁定一个特征。两条线索锁定两个特征，人就找出来了。孩子做题卡住时，常犯的错误是线索（条件）还没用完就急着算。提醒一句：<strong>把条件逐条画勾，每条都变成了方程没有？</strong> 最怕的是「想当然」——比如题目说「相切」却只凭感觉画图，不把「距离等于半径」写成等式。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（直线含参原型）：直线 $(2x+y-1)+m(x-y+2)=0$ 无论 $m$ 取何值恒过定点，求该定点。</p>
+</blockquote>
+<ol>
+<li><strong>设</strong>：定点 $P(x_0,y_0)$——「无论 $m$ 取何值都成立」说明 $x_0,y_0$ 与 $m$ 无关</li>
+<li><strong>列方程</strong>：按 $m$ 整理，原式 $=(2x+y-1)+m(x-y+2)$，要让它对任意 $m$ 都等于 0，必须两部分同时为 0：
+$2x_0+y_0-1=0$ 且 $x_0-y_0+2=0$</li>
+<li><strong>解</strong>：两式相加得 $3x_0+1=0$，$x_0=-\dfrac{1}{3}$，代回得 $y_0=\dfrac{5}{3}$</li>
+<li><strong>检验</strong>：把 $\left(-\dfrac{1}{3},\dfrac{5}{3}\right)$ 代回原直线，两个括号都等于 0，确实与 $m$ 无关 ✓</li>
+</ol>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 能说清「一个独立条件 ↔ 一个方程 ↔ 一个未知数」的对应关系</li>
+<li>[ ] 见到「恒过定点」「任意 $m$ 都成立」会反应「按参数整理、系数分别为 0」</li>
+<li>[ ] 求直线方程时会先数「我有几个条件、需要几个未知数」，再选方程形式</li>
+<li>[ ] 条件用完方程还不够时，会回头找隐含条件（相切、共线、中点）</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="../%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E7%9B%B4%E7%BA%BF%E4%B8%8E%E6%96%B9%E7%A8%8B.html">直线与方程</a> — 本思想的主战场</li>
+<li><a href="../%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E5%90%91%E9%87%8F%E6%B3%95%E6%B1%82%E7%A9%BA%E9%97%B4%E8%A7%92%E4%B8%8E%E8%B7%9D%E7%A6%BB.html">向量法求空间角与距离</a> — 建系后求点坐标全靠列方程</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E8%BD%AC%E5%8C%96%E5%8C%96%E5%BD%92.html">转化化归</a> — 几何条件翻译成代数方程本身就是一种化归</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA.html">分类讨论</a> — 方程无解/多解时往往要讨论参数</li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>四大思想第二批建卡（2026-09-19）：本卡 + 分类讨论，与首批数形结合、转化化归齐套。</li>
+<li>月考后如有典型错题涉及「条件漏用」，回链到本卡备注栏。</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>
