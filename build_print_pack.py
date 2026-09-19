@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""中秋打印包 PDF 生成器：3 套概念检验 30 问 + 2 张陷阱卡 + 5 张思想方法速查表。
+"""国庆打印包 PDF 生成器（数学）：过关 30 问 + 陷阱清单 + 思想方法速查表 + 公式默写页 + 家长提问卡。
 内容直接解析自知识库 Markdown 卡片，避免转抄错误。"""
 import os
 import re
@@ -18,10 +18,10 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 ROOT = Path(__file__).resolve().parent
-KB = ROOT / "知识库" / "物理"
+KB = ROOT / "知识库" / "数学"
 OUT_DIR = ROOT / "打印包"
 OUT_DIR.mkdir(exist_ok=True)
-OUT_PDF = OUT_DIR / "中秋打印包_物理.pdf"
+OUT_PDF = OUT_DIR / "国庆打印包_数学.pdf"
 
 # ---------- 字体 ----------
 regular_font = os.environ.get("DAIMON_CJK_FONT_REGULAR")
@@ -51,7 +51,9 @@ SUP = {"0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵",
 OPS = {"times": "×", "cdot": "·", "div": "÷", "pm": "±", "geq": "≥",
        "leq": "≤", "neq": "≠", "approx": "≈", "gg": "≫", "ll": "≪",
        "Rightarrow": "⇒", "rightarrow": "→", "uparrow": "↑",
-       "downarrow": "↓", "infty": "∞", "propto": "∝", "prime": "′"}
+       "downarrow": "↓", "infty": "∞", "propto": "∝", "prime": "′",
+       "parallel": "∥", "perp": "⊥", "angle": "∠",
+       "subset": "⊂", "langle": "〈", "rangle": "〉"}
 
 
 def _sub(s):
@@ -71,13 +73,17 @@ def _frac_repl(m):
 
 
 def latex2uni(s):
-    s = re.sub(r"\\d?frac\{([^{}]+)\}\{([^{}]+)\}", _frac_repl, s)
+    s = re.sub(r"\\vec\{([^{}]+)\}", r"\1", s)  # 箭头字形缺失，PDF 中向量只留字母
+    s = re.sub(r"\\vec\s*([A-Za-z])", r"\1", s)
+    s = re.sub(r"\\d?frac\{((?:[^{}]|\{[^{}]*\})*)\}\{((?:[^{}]|\{[^{}]*\})*)\}",
+               _frac_repl, s)
     s = re.sub(r"\\frac(\d)(\d)", r"\1/\2", s)
     s = re.sub(r"\\sqrt\{([^{}]+)\}", r"√(\1)", s)
     s = s.replace("\\sqrt", "√")
     s = re.sub(r"\\overline\{([^{}]+)\}", r"\1", s)
     s = re.sub(r"\\bar\{([^{}]+)\}", r"\1", s)
     s = re.sub(r"\\(?:text|mathrm|mathbf)\{([^{}]*)\}", r"\1", s)
+    s = re.sub(r"\\lvert|\\rvert|\\mid", "|", s)
     for k, v in GREEK.items():
         s = s.replace("\\" + k, v)
     for k, v in OPS.items():
@@ -161,11 +167,11 @@ def parse_check_card(path):
     part1 = section(text, "## 第一部分", ["## 第二部分"])
     part2 = section(text, "## 第二部分", ["## ✅"])
     blk_a = section(part1, "### A.", ["### B."])
-    blk_b = section(part1, "### B.", ["---", "## "])
+    blk_b = section(part1, "### B.", ["\n---", "\n## "])
     qa = parse_numbered_lines(blk_a)
     qb = parse_numbered_lines(blk_b)
     blk_a2 = section(part2, "### A.", ["### B."])
-    blk_b2 = section(part2, "### B.", ["---", "## "])
+    blk_b2 = section(part2, "### B.", ["\n---", "\n## "])
     ta = parse_md_tables(blk_a2)[0]
     tb = parse_md_tables(blk_b2)[0]
     std = section(text, "## ✅ 过关标准", ["## 错题对应", "## 备注"])
@@ -247,18 +253,14 @@ def three_line_table(rows, widths, header=True):
     return t
 
 
-def blank_line(width_chars=28):
-    return "＿" * 12
-
-
 # ---------- 页眉页脚 ----------
 def later_pages(canvas, doc):
     canvas.saveState()
     w, h = A4
     canvas.setFont("DaimonCJK", 8.5)
     canvas.setFillColor(MUTED)
-    canvas.drawString(2.2 * cm, h - 1.3 * cm, "中秋打印包 · 物理（概念检验 + 陷阱清单 + 思想方法速查 + 家长提问卡）")
-    canvas.drawRightString(w - 2.2 * cm, h - 1.3 * cm, "申悦学习 2026.9")
+    canvas.drawString(2.2 * cm, h - 1.3 * cm, "国庆打印包 · 数学（过关30问 + 陷阱清单 + 思想方法速查 + 公式默写 + 家长提问卡）")
+    canvas.drawRightString(w - 2.2 * cm, h - 1.3 * cm, "申悦学习 2026.10")
     canvas.setStrokeColor(HexColor("#dddddd"))
     canvas.line(2.2 * cm, h - 1.5 * cm, w - 2.2 * cm, h - 1.5 * cm)
     canvas.drawCentredString(w / 2, 1.1 * cm, f"第 {doc.page} 页")
@@ -279,43 +281,39 @@ story = []
 
 # 封面
 story.append(Spacer(1, 3.2 * cm))
-story.append(Paragraph("中秋打印包 · 物理", S["title"]))
+story.append(Paragraph("国庆打印包 · 数学", S["title"]))
 story.append(Spacer(1, 0.4 * cm))
-story.append(Paragraph("概念检验三件套 + 陷阱清单 + 思想方法速查 + 家长提问卡", S["subtitle"]))
-story.append(Paragraph("中秋假期 2026.9.25–9.27 · 备战高二第一次月考", S["subtitle"]))
+story.append(Paragraph("过关 30 问 + 陷阱清单 + 思想方法速查 + 公式默写页 + 家长提问卡", S["subtitle"]))
+story.append(Paragraph("国庆假期 2026.10.1–10.7 · 空间向量与立体几何主线", S["subtitle"]))
 story.append(Spacer(1, 1.2 * cm))
 cover_items = [
-    "第一部分　概念检验三件套：静电场 30 问 / 动量 30 问 / 光与振动波 30 问",
-    "第二部分　陷阱清单：静电场 10 条 / 动量 8 条（考前 10 分钟只看这个）",
-    "第三部分　思想方法速查五表：守恒 / 图像 / 类比 / 临界字典 / 定义式与仪式",
-    "第四部分　家长提问卡 30 问：照原话问、看关键词打钩（每天睡前 15 分钟）",
+    "第一部分　概念检验：空间向量与直线过关 30 问（判断 20 + 填空 10，含答案）",
+    "第二部分　陷阱清单：空间向量与立几常见陷阱 10 条（考前 10 分钟只看这个）",
+    "第三部分　思想方法速查两表：数形结合翻译表 / 转化化归方向表",
+    "第四部分　公式默写页：空间向量 + 直线核心公式（留空自测，附答案）",
+    "第五部分　家长提问卡 30 问：照原话问、看关键词打钩（每天睡前 15 分钟）",
 ]
 for it in cover_items:
     story.append(Paragraph(conv(it), ParagraphStyle(
         "ci", parent=S["body"], fontSize=11.5, leading=20, alignment=1)))
 story.append(Spacer(1, 1.0 * cm))
-story.append(Paragraph(conv("用法：检验卷先做题后对答案（答案区在每套后半部分），错题回知识库对应卡片补课；"
-                            "陷阱清单与速查五表贴在书桌前，碎片时间扫一眼。"), S["note"]))
+story.append(Paragraph(conv("用法：检验卷与默写页先做题后对答案（答案区在后半部分），错题回知识库对应卡片补课；"
+                            "陷阱清单与速查两表贴在书桌前，碎片时间扫一眼。"), S["note"]))
 story.append(PageBreak())
 
-# 第一部分：概念检验三件套
+# 第一部分：概念检验 30 问
 CHECK_CARDS = [
-    ("第一套　静电场基本概念过关 30 问",
-     KB / "概念检验" / "高二深化_物理_概念检验_静电场基本概念过关30问.md"),
-    ("第二套　动量基本概念过关 30 问",
-     KB / "概念检验" / "高二深化_物理_概念检验_动量基本概念过关30问.md"),
-    ("第三套　光与振动波基本概念过关 30 问",
-     KB / "概念检验" / "高二深化_物理_概念检验_光与振动波基本概念过关30问.md"),
+    ("空间向量与直线过关 30 问",
+     KB / "概念检验" / "高二深化_数学_概念检验_空间向量与直线过关30问.md"),
 ]
 
-story.append(Paragraph("第一部分　概念检验三件套", S["h1"]))
-story.append(P("每套 30 题（判断 20 + 填空 10），建议用时 20 分钟。判断题在题后（　）内打 √ 或 ×；"
+story.append(Paragraph("第一部分　概念检验：空间向量与直线过关 30 问", S["h1"]))
+story.append(P("共 30 题（判断 20 + 填空 10），建议用时 20 分钟。判断题在题后（　）内打 √ 或 ×；"
                "填空题把关键词写在横线上。全部做完再翻后面的答案区。过关标准：判断错 ≤ 2、填空对 ≥ 8。"))
 story.append(Spacer(1, 8))
 
 for ci, (name, path) in enumerate(CHECK_CARDS):
     qa, qb, ta, tb, std = parse_check_card(path)
-    story.append(Paragraph(name, S["h1"]))
     story.append(Paragraph("A. 判断题（每题一句话，√ 或 ×）", S["h2"]))
     for n, q in qa:
         story.append(Paragraph(conv(f"{n}. {q}（　）"), S["q"]))
@@ -334,18 +332,14 @@ for ci, (name, path) in enumerate(CHECK_CARDS):
     story.append(Paragraph("过关标准", S["h2"]))
     for it in std:
         story.append(Paragraph(conv("□ " + it), S["q"]))
-    if ci < len(CHECK_CARDS) - 1:
-        story.append(PageBreak())
 
 story.append(PageBreak())
 
 # 第二部分：陷阱清单
 story.append(Paragraph("第二部分　陷阱清单（考前 10 分钟只看这个）", S["h1"]))
 TRAP_CARDS = [
-    ("静电场常见陷阱 10 条",
-     KB / "易错警示与辨析" / "高二深化_物理_易错警示与辨析_静电场常见陷阱.md"),
-    ("动量常见陷阱 8 条",
-     KB / "易错警示与辨析" / "高二深化_物理_易错警示与辨析_动量常见陷阱.md"),
+    ("空间向量与立几常见陷阱 10 条",
+     KB / "易错警示与辨析" / "高二深化_数学_易错警示与辨析_空间向量与立几常见陷阱.md"),
 ]
 for name, path in TRAP_CARDS:
     story.append(Paragraph(name, S["h2"]))
@@ -362,8 +356,9 @@ for name, path in TRAP_CARDS:
 
 story.append(PageBreak())
 
-# 第三部分：思想方法速查五表
-story.append(Paragraph("第三部分　思想方法速查五表", S["h1"]))
+# 第三部分：思想方法速查两表
+story.append(Paragraph("第三部分　思想方法速查两表", S["h1"]))
+
 
 def grab_table(path, header_keyword):
     for t in parse_md_tables(read_md(path)):
@@ -371,51 +366,62 @@ def grab_table(path, header_keyword):
             return t
     return None
 
+
 METHOD = KB / "典型题型与方法"
 
-# 表1 守恒
-t = grab_table(METHOD / "高二深化_物理_典型题型与方法_思想方法_守恒思想.md", "守恒条件")
-story.append(Paragraph("表 1　三大守恒对照（守恒三问：守哪笔账？条件够吗？谁偷走了？）", S["h2"]))
-story.append(three_line_table(t, [2.2 * cm, 3.4 * cm, 2.0 * cm, 3.6 * cm, 4.8 * cm]))
+# 表1 数形结合
+t = grab_table(METHOD / "高二深化_数学_典型题型与方法_思想方法_数形结合.md", "代数条件")
+story.append(Paragraph("表 1　数形结合翻译表（看到式子想图形，看到图形列式子）", S["h2"]))
+story.append(three_line_table(t, [5.0 * cm, 5.4 * cm, 5.6 * cm]))
 story.append(Spacer(1, 8))
 
-# 表2 图像
-t = grab_table(METHOD / "高二深化_物理_典型题型与方法_思想方法_图像通用手册.md", "斜率")
-story.append(Paragraph("表 2　图像通用手册（先看轴，再斜率，面积想累积；轴下为负）", S["h2"]))
-story.append(three_line_table(t, [2.0 * cm, 2.6 * cm, 3.2 * cm, 3.2 * cm, 5.0 * cm]))
+# 表2 转化化归
+t = grab_table(METHOD / "高二深化_数学_典型题型与方法_思想方法_转化化归.md", "转化方向")
+story.append(Paragraph("表 2　转化化归方向表（把不会的题变成会的题）", S["h2"]))
+story.append(three_line_table(t, [4.4 * cm, 6.4 * cm, 5.2 * cm]))
 story.append(Spacer(1, 8))
-
-# 表3 类比
-t = grab_table(METHOD / "高二深化_物理_典型题型与方法_思想方法_类比迁移.md", "静电场")
-story.append(Paragraph("表 3　类比迁移：重力场 ↔ 静电场（直觉带路，公式收账）", S["h2"]))
-story.append(three_line_table(t, [4.4 * cm, 4.8 * cm, 6.8 * cm]))
-story.append(Spacer(1, 8))
-
-# 表4 临界字典
-t = grab_table(METHOD / "高二深化_物理_典型题型与方法_思想方法_恰好临界条件字典.md", "立即翻译成")
-story.append(Paragraph("表 4　「恰好」临界条件字典（见到恰好先停笔，临界方程送上门）", S["h2"]))
-story.append(three_line_table(t, [5.4 * cm, 7.2 * cm, 3.4 * cm]))
-story.append(Spacer(1, 8))
-
-# 表5 定义式 vs 决定式
-t = grab_table(METHOD / "高二深化_物理_典型题型与方法_思想方法_方向与符号的第一仪式.md", "定义式")
-story.append(Paragraph("表 5　定义式 vs 决定式（见到「成正比」先问：这是定义式还是决定式）", S["h2"]))
-story.append(three_line_table(t, [2.4 * cm, 6.0 * cm, 7.6 * cm]))
-story.append(Spacer(1, 8))
-story.append(Paragraph(conv("两个动笔仪式：矢量题先念「正方向是……」，静电场题先念「符号带全……」。"
-                            "三个先约定：正方向、零势点、参考系——先声明，后一致。"), S["note"]))
+story.append(Paragraph(conv("两个使用仪式：卡壳先问「这个式子像什么几何量」（数形结合）；"
+                            "再问「它能兑换成我学过的什么」（转化化归）。兑换成功，难题变熟题。"), S["note"]))
 
 story.append(PageBreak())
 
-# 第四部分：家长提问卡（费曼回话题库）
-story.append(Paragraph("第四部分　家长提问卡（费曼回话题库 30 问）", S["h1"]))
+# 第四部分：公式默写页（留空版 + 答案）
+story.append(Paragraph("第四部分　公式默写页（遮答案自测）", S["h1"]))
+story.append(P("用法：盖住右列，在「默写」列写出公式，写完对照答案。全对 12 条 → 公式关通过。"
+               "考前一周每天默一遍。"))
+story.append(Spacer(1, 8))
+
+FORMULA_ROWS = [
+    ["#", "名称", "默写（盖住右列）", "答案"],
+    ["1", "空间向量数量积（坐标）", "　　　　　　　　", "$\\vec{a}\\cdot\\vec{b}=x_1x_2+y_1y_2+z_1z_2$"],
+    ["2", "向量模长", "　　　　　　　　", "$\\lvert\\vec{a}\\rvert=\\sqrt{x_1^2+y_1^2+z_1^2}$"],
+    ["3", "向量夹角", "　　　　　　　　", "$\\cos\\langle\\vec{a},\\vec{b}\\rangle=\\frac{\\vec{a}\\cdot\\vec{b}}{\\lvert\\vec{a}\\rvert\\lvert\\vec{b}\\rvert}$"],
+    ["4", "异面直线所成角", "　　　　　　　　", "$\\cos\\theta=\\frac{\\lvert\\vec{a}\\cdot\\vec{b}\\rvert}{\\lvert\\vec{a}\\rvert\\lvert\\vec{b}\\rvert}$（取绝对值）"],
+    ["5", "线面角（法向量 $\\vec{n}$）", "　　　　　　　　", "$\\sin\\theta=\\frac{\\lvert\\vec{a}\\cdot\\vec{n}\\rvert}{\\lvert\\vec{a}\\rvert\\lvert\\vec{n}\\rvert}$（是 sin！）"],
+    ["6", "面面夹角 / 二面角", "　　　　　　　　", "$\\cos\\theta=\\frac{\\lvert\\vec{n_1}\\cdot\\vec{n_2}\\rvert}{\\lvert\\vec{n_1}\\rvert\\lvert\\vec{n_2}\\rvert}$（二面角须判锐钝）"],
+    ["7", "点到平面距离", "　　　　　　　　", "$d=\\frac{\\lvert\\vec{AP}\\cdot\\vec{n}\\rvert}{\\lvert\\vec{n}\\rvert}$"],
+    ["8", "四点共面条件", "　　　　　　　　", "$\\vec{OP}=x\\vec{OA}+y\\vec{OB}+z\\vec{OC}$，$x+y+z=1$"],
+    ["9", "两直线垂直（一般式）", "　　　　　　　　", "$A_1A_2+B_1B_2=0$（万能判定）"],
+    ["10", "点到直线距离", "　　　　　　　　", "$d=\\frac{\\lvert Ax_0+By_0+C\\rvert}{\\sqrt{A^2+B^2}}$"],
+    ["11", "两平行线间距离", "　　　　　　　　", "$d=\\frac{\\lvert C_1-C_2\\rvert}{\\sqrt{A^2+B^2}}$（系数先化一致）"],
+    ["12", "过两点的斜率", "　　　　　　　　", "$k=\\frac{y_2-y_1}{x_2-x_1}$（$x_1\\neq x_2$）"],
+]
+story.append(three_line_table(FORMULA_ROWS, [0.9 * cm, 4.2 * cm, 4.4 * cm, 6.5 * cm]))
+story.append(Spacer(1, 8))
+story.append(Paragraph(conv("默写自查三问：线面角是 sin 还是 cos？异面角取不取绝对值？"
+                            "垂直判定用 $k_1k_2=-1$ 还是万能式？"), S["note"]))
+
+story.append(PageBreak())
+
+# 第五部分：家长提问卡（费曼回话题库）
+story.append(Paragraph("第五部分　家长提问卡（费曼回话题库 30 问）", S["h1"]))
 story.append(P("家长照「您这样问」原话提问，孩子口头回答；对照「过关信号」里的关键词，意思对就打 √，"
                "磕绊标 ⚠️、答不上标 ❌。答不上就去最后一列指路的卡片复习。每天睡前 5 题，错了别纠正，"
                "说「再讲讲」就好。"))
 story.append(Spacer(1, 8))
 
 QUESTIONS_MD = ROOT / "家长支持" / "家长提问卡_费曼回话题库.md"
-Q_SECTIONS = ["静电场（12 问）", "动量（10 问）", "光与振动波（8 问）"]
+Q_SECTIONS = ["空间向量（12 问）", "立体几何证明（8 问）", "直线与方程（10 问）"]
 q_tables = parse_md_tables(read_md(QUESTIONS_MD))[:3]
 for si, (sec_name, qt) in enumerate(zip(Q_SECTIONS, q_tables)):
     story.append(Paragraph(sec_name, S["h2"]))
@@ -429,6 +435,6 @@ for si, (sec_name, qt) in enumerate(zip(Q_SECTIONS, q_tables)):
 doc = SimpleDocTemplate(str(OUT_PDF), pagesize=A4,
                         topMargin=2.0 * cm, bottomMargin=1.8 * cm,
                         leftMargin=2.2 * cm, rightMargin=2.2 * cm,
-                        title="中秋打印包 · 物理", author="申悦学习")
+                        title="国庆打印包 · 数学", author="申悦学习")
 doc.build(story, onFirstPage=first_page, onLaterPages=later_pages)
 print("OK:", OUT_PDF)

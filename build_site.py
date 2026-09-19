@@ -5,8 +5,8 @@ build_site.py — 把 Markdown 内容源构建为 GitHub Pages 静态网站（�
 用法：python build_site.py
 
 内容源（修改这些文件后重新运行本脚本即可更新网站）：
-  - 中秋3天辅导计划_9月25-27日.md      -> docs/plan.html
-  - 家长支持/家长物理速成指南_动量篇.md -> docs/parent-guide.html
+  - 国庆7天辅导计划_10月1-7日.md      -> docs/plan.html
+  - 家长支持/家长数学速成指南_空间向量与立体几何篇.md -> docs/parent-guide.html
   - 知识库/**/*.md                      -> docs/kb/**/*.html（镜像目录结构）
 """
 import re
@@ -22,7 +22,7 @@ KB = ROOT / "知识库"
 
 MD = MarkdownIt("gfm-like").disable("linkify")
 
-SITE_NAME = "申悦学习 · AI 指导物理学习"
+SITE_NAME = "申悦学习 · AI 指导数学学习"
 
 CSS = """
 :root{
@@ -106,9 +106,9 @@ main{max-width:820px;margin:0 auto;padding:2.2rem 1.4rem 4rem}
 
 NAV = """<nav class="site-nav">
 <a href="{base}index.html">首页</a>
-<a href="{base}plan.html">3天辅导计划</a>
-<a href="{base}parent-guide.html">速成指南·静电场</a>
-<a href="{base}parent-guide-momentum.html">速成指南·动量</a>
+<a href="{base}plan.html">7天辅导计划</a>
+<a href="{base}parent-guide.html">速成指南·空间向量</a>
+<a href="{base}parent-questions.html">提问卡</a>
 <a href="{base}holiday-framework.html">长假专项框架</a>
 <a href="{base}kb/index.html">知识库</a>
 </nav>"""
@@ -152,7 +152,7 @@ def page_html(title, body_html, base, desc="", extra_after=""):
 </head>
 <body>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="{base}index.html">🌕 {SITE_NAME}</a>
+<a class="brand" href="{base}index.html">📐 {SITE_NAME}</a>
 {NAV.format(base=base)}
 </div></header>
 <main class="page">
@@ -199,17 +199,15 @@ def main():
 
     # 1) 根级单页
     singles = [
-        (ROOT / "中秋3天辅导计划_9月25-27日.md", "plan.html", "中秋3天物理辅导计划", "中秋假期3天物理辅导：真题诊断、静电场主线突破、真题模拟与错题复盘"),
-        (ROOT / "家长支持" / "家长物理速成指南_静电场篇.md", "parent-guide.html", "家长物理速成指南 · 静电场篇",
-         "写给很久没碰物理的家长：山坡类比建立静电场直觉、批改四问清单与答疑"),
-        (ROOT / "家长支持" / "家长物理速成指南_动量篇.md", "parent-guide-momentum.html", "家长物理速成指南 · 动量篇",
-         "30分钟建立动量直觉、三道能讲给孩子听的例题、批改四问清单"),
+        (ROOT / "国庆7天辅导计划_10月1-7日.md", "plan.html", "国庆7天数学辅导计划", "国庆假期7天数学专项：摸底诊断、空间向量与立体几何主线突破、直线与方程机动线、华附卷模拟与错题复盘"),
+        (ROOT / "家长支持" / "家长数学速成指南_空间向量与立体几何篇.md", "parent-guide.html", "家长数学速成指南 · 空间向量与立体几何篇",
+         "写给很久没碰数学的家长：搬家指令与旗杆类比建立向量直觉、三道能讲给孩子听的例题、批改四问清单"),
         (ROOT / "家长支持" / "家长提问卡_费曼回话题库.md", "parent-questions.html", "家长提问卡 · 费曼回话题库",
-         "家长照原话问、看关键词打钩：静电场12问+动量10问+光与振动波8问，每天睡前15分钟"),
+         "家长照原话问、看关键词打钩：空间向量12问+立几证明8问+直线与方程10问，每天睡前15分钟"),
         (ROOT / "家长支持" / "错题入库速查_考后三步.md", "mistake-intake.html", "考后错题入库速查",
          "月考后三步走：拍照→发给Kimi→查看失分分析，错题自动变卡片"),
         (ROOT / "家长支持" / "长假专项复习设计框架.md", "holiday-framework.html", "长假专项复习设计框架",
-         "小长假/长假专项复习通用模板：五步法 + 3天/7天日程模板，国庆专项按此生成"),
+         "小长假/长假专项复习通用模板：五步法 + 3天/7天日程模板，国庆专项为首期实例"),
     ]
     extra_guide = '<button class="print-btn" onclick="window.print()">🖨️ 打印速查表</button>'
     for src, out, fb_title, desc in singles:
@@ -249,39 +247,39 @@ def main():
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{SITE_NAME}</title>
-<meta name="description" content="中秋假期备战高二第一次月考，并一路陪伴到2028年高考的物理学习项目">
+<meta name="description" content="国庆假期备战高二第一次月考，并一路陪伴到2028年高考的数学学习项目">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="index.html">🌕 {SITE_NAME}</a>
+<a class="brand" href="index.html">📐 {SITE_NAME}</a>
 {NAV.format(base="")}
 </div></header>
 
 <section class="hero">
-<span class="chip">📍 当前：中秋假期（9月25–27日）备战高二第一次月考</span>
-<span class="chip">🆕 已按广州四校真题修订：静电场为第一主线</span>
+<span class="chip">📍 当前：国庆假期（10月1–7日）备战高二第一次月考</span>
+<span class="chip">🆕 已按广州四校真题定主线：空间向量与立体几何</span>
 <h1>把每一次"不懂"，<br>变成一张讲得清楚的卡片</h1>
-<p class="sub">从中秋三天辅导出发，用知识库积累错题与方法，陪伴申悦到 2028 年高考。</p>
+<p class="sub">从国庆七天专项出发，用知识库积累错题与方法，陪伴申悦到 2028 年高考。</p>
 </section>
 
 <section class="cards">
-<a class="card" href="print/中秋打印包_物理.pdf" download><div class="icon">🖨️</div><h3>中秋打印包 · 点击下载</h3>
-<p>A4 共 13 页四部分：概念检验 30 问 ×3（含答案）+ 易错陷阱卡 ×2 + 思想方法速查表 ×5 + 家长提问卡 30 问，打印店打开本页即可下载打印。</p></a>
-<a class="card" href="plan.html"><div class="icon">📅</div><h3>中秋 3 天辅导计划（v3 定稿）</h3>
-<p>9.25 真题诊断 + 静电场地基 → 9.26 静电场题型突破 + 机动板块 → 9.27 真题模拟与错题复盘，每天约 4 小时。月考范围已确认为四校真题范围。</p></a>
+<a class="card" href="print/国庆打印包_数学.pdf" download><div class="icon">🖨️</div><h3>国庆打印包 · 点击下载</h3>
+<p>A4 五部分：过关 30 问（含答案）+ 易错陷阱卡 + 思想方法速查表 + 公式默写页 + 家长提问卡 30 问，打印店打开本页即可下载打印。</p></a>
+<a class="card" href="plan.html"><div class="icon">📅</div><h3>国庆 7 天辅导计划</h3>
+<p>10.1 摸底诊断 → 10.2–3 空间向量与立几主线 → 10.4 直线与方程 → 10.5 查漏回补 → 10.6 华附卷模拟复盘，每天约 4 小时。</p></a>
 <a class="card" href="holiday-framework.html"><div class="icon">🏗️</div><h3>长假专项复习设计框架</h3>
-<p>中秋专项是首期实例：五步法 + 3天/7天日程模板。国庆专项（10.1–10.7）将在月考分析后按此生成。</p></a>
-<a class="card" href="parent-guide.html"><div class="icon">👨‍👧</div><h3>家长速成指南 · 静电场篇</h3>
-<p>很久没碰物理也能陪学："山坡类比"建立静电场直觉、三道能讲给孩子听的例题、批改四问清单。</p></a>
-<a class="card" href="kb/物理/素材与拓展/高二深化_物理_素材与拓展_广州四校高二上月考真题分析报告.html"><div class="icon">📊</div><h3>四校真题分析报告</h3>
-<p>2025.10 华附/执信/铁一/二中月考真题逐题归纳：静电场是最大公约数，选必一因校而异。</p></a>
-<a class="card" href="kb/index.html"><div class="icon">📚</div><h3>物理知识库</h3>
-<p>23 张卡片：知识卡 14 + 思想方法 5 + 概念检验三件套 3 + 真题分析 1，张张可打印，碎片时间自测。</p></a>
+<p>国庆专项是首期实例：五步法 + 3天/7天日程模板。寒假专项将在期中/期末考分析后按此生成。</p></a>
+<a class="card" href="parent-guide.html"><div class="icon">👨‍👧</div><h3>家长速成指南 · 空间向量篇</h3>
+<p>很久没碰数学也能陪学：「搬家指令」「旗杆」类比建立向量直觉、三道能讲给孩子听的例题、批改四问清单。</p></a>
+<a class="card" href="kb/数学/素材与拓展/高二深化_数学_素材与拓展_广州四校高二上月考真题分析报告.html"><div class="icon">📊</div><h3>四校真题分析报告</h3>
+<p>2025.10 华附/广附/执信/铁一月考真题逐题归纳：空间向量与立体几何是最大公约数，直线与方程是稳定第二板块。</p></a>
+<a class="card" href="kb/index.html"><div class="icon">📚</div><h3>数学知识库</h3>
+<p>11 张卡片：概念卡 4 + 题型卡 2 + 思想方法 2 + 陷阱卡 1 + 过关 30 问 + 真题分析 1，张张可打印，碎片时间自测。</p></a>
 <a class="card" href="parent-questions.html"><div class="icon">🎤</div><h3>家长提问卡 · 30 问</h3>
-<p>您照原话问、看关键词打钩：每天睡前 15 分钟费曼回讲，零物理基础也能用。</p></a>
-<a class="card" href="kb/复盘追踪/艾宾浩斯复习日历_中秋起.html"><div class="icon">🗓️</div><h3>艾宾浩斯复习日历</h3>
-<p>按 1/2/4/7/15 天记忆曲线排好的打卡表（9.25–10.12），每天 10–20 分钟对抗遗忘。</p></a>
+<p>您照原话问、看关键词打钩：每天睡前 15 分钟费曼回讲，零数学基础也能用。</p></a>
+<a class="card" href="kb/复盘追踪/艾宾浩斯复习日历_国庆起.html"><div class="icon">🗓️</div><h3>艾宾浩斯复习日历</h3>
+<p>按 1/2/4/7/15 天记忆曲线排好的打卡表（10.1–10.21），每天 10–20 分钟对抗遗忘。</p></a>
 <a class="card" href="mistake-intake.html"><div class="icon">📥</div><h3>考后错题入库</h3>
 <p>月考后三步走：拍照 → 发给 Kimi → 收失分分析，错题自动变卡片滚雪球。</p></a>
 </section>
@@ -290,19 +288,20 @@ def main():
 <div class="timeline">
 <table>
 <tr><th>时间</th><th>里程碑</th></tr>
-<tr><td>9.18</td><td>知识库建库；入库广州四校月考真题，修订月考范围（静电场为第一主线），卡片扩至 14 张</td></tr>
-<tr><td>9.19</td><td>月考范围确认为四校真题范围，中秋计划 v3 定稿；打印包定稿；长假专项复习设计框架上线</td></tr>
-<tr><td>9.25（周五）</td><td>Day 1：执信卷真题摸底 → 电场强度、电势与电势能概念地基</td></tr>
-<tr><td>9.26（周六）</td><td>Day 2：静电场题型突破（电容器/偏转/综合）+ 机动板块（动量/光/振动波，说不清进度则静电场深化）</td></tr>
-<tr><td>9.27（周日）</td><td>Day 3：华附卷限时模拟 → 逐题复盘 → 错题入库</td></tr>
-<tr><td>9.28 当周</td><td>高二第一次月考 🎯</td></tr>
-<tr><td>考后</td><td>试卷拍照入库 → AI 分析失分板块 → 更新状态表 → 每周回讲常态化</td></tr>
-<tr><td>10.1–10.7</td><td>国庆长假专项：按长假专项框架设计，主线待月考分析后确定</td></tr>
+<tr><td>9.19</td><td>数学项目建库；入库广州四校月考真题，完成真题分析报告（空间向量与立几为第一主线）；首批 11 卡 + 国庆 7 天专项计划定稿</td></tr>
+<tr><td>10.1（周四）</td><td>Day 1：执信卷选填摸底 + 过关 30 问笔答 → 错题三桶分类</td></tr>
+<tr><td>10.2–10.3</td><td>Day 2–3：空间向量概念过卡 + 立几大题突破（建系五步走、翻折与动点专题）</td></tr>
+<tr><td>10.4（周日）</td><td>Day 4：直线与方程机动线（题型限时训练）</td></tr>
+<tr><td>10.5（周一）</td><td>Day 5：高一遗留板块查漏 + 错题回补</td></tr>
+<tr><td>10.6（周二）</td><td>Day 6：华附卷限时模拟 → 逐题复盘 → 错题入库</td></tr>
+<tr><td>10.7（周三）</td><td>Day 7：休整 + 15 分钟验收回讲</td></tr>
+<tr><td>月考后</td><td>试卷拍照入库 → AI 分析失分板块 → 更新状态表 → 每周回讲常态化</td></tr>
+<tr><td>2027 寒假</td><td>寒假专项：按长假专项框架设计，主线待期中/期末考分析后确定</td></tr>
 </table>
 </div>
 
 <div class="support-band"><div class="inner">
-<strong>给家长的话：</strong>您不需要会物理。您需要的一切都在<a href="parent-guide.html">《家长速成指南 · 静电场篇》</a>里——
+<strong>给家长的话：</strong>您不需要会数学。您需要的一切都在<a href="parent-guide.html">《家长速成指南 · 空间向量篇》</a>里——
 直觉类比、能讲给孩子听的例题、批改四问清单。您的角色是"提问的记者"，不是"讲课的老师"；
 她的角色是"讲课的小老师"。先有关系，才有成绩。
 </div></div>

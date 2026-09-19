@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【立体几何平行与垂直证明】解答题第（1）问的送分套路 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【立体几何平行与垂直证明】解答题第（1）问的送分套路">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【立体几何平行与垂直证明】解答题第（1）问的送分套路</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>人教 A 版必修二 8.5–8.6 节 + 选必一 1.4 节 + 2025.10 四校真题（广附题 17(1)/19(1)、执信题 16(1)/18(1)、铁一题 18(1)、华附题 18(1)/19(1)）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>四校真题规律：每卷立几大题第（1）问都是证明题</strong>（证线面平行或线线/线面垂直），用综合几何法更快；第（2）（3）问求角求距离才建系。</p>
+<p><strong>判定定理一句话版</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>要证</th>
+<th>用哪条</th>
+<th>口诀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线面平行</td>
+<td>在平面内找一条线与它平行</td>
+<td>「面内找平行」</td>
+</tr>
+<tr>
+<td>线面垂直</td>
+<td>该线垂直于面内<strong>两条相交</strong>直线</td>
+<td>「垂直两条相交线」</td>
+</tr>
+<tr>
+<td>面面垂直</td>
+<td>一个面内有一条线垂直另一个面</td>
+<td>「面内垂线垂对面」</td>
+</tr>
+<tr>
+<td>线线垂直</td>
+<td>先证线面垂直，线垂直面内一切线</td>
+<td>「线垂面 → 线垂线」</td>
+</tr>
+</tbody>
+</table>
+<p><strong>两大高频辅助手段</strong>：</p>
+<ol>
+<li><strong>中点 → 中位线</strong>：题干给中点，优先想中位线造平行（真题里 $E,F$ 是中点几乎必用）。</li>
+<li><strong>面面垂直 → 线面垂直</strong>：已知「平面 $\alpha\perp$ 平面 $\beta$」，立刻在其中一个面内找<strong>垂直于交线</strong>的直线，它垂直另一个面（这是翻折题的标准第一步）。</li>
+</ol>
+<p><strong>翻折题三不变</strong>：翻折前后，同一半平面内的长度、角度、垂直关系<strong>不变</strong>——先把折叠前平面图里的关系标清楚，再搬到立体图。</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>证明题像<strong>过海关</strong>：想让一条直线「进入」平面（平行），你得在面内给它找一个「老乡」（平行线）接应；想证明它「管得住」整个平面（垂直），光镇住一条线不行，得镇住<strong>两条相交</strong>的线——就像按住跷跷板的两头，整个板才动不了。中点就是出题人送的梯子：两个中点一连，中位线自动平行且减半，梯子递到你手里了一定要爬。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（执信卷题 16 原型）：四棱锥 $P$-$ABCD$ 底面是菱形，平面 $PAC\perp$ 平面 $ABCD$，$E,F$ 分别是 $PA,PB$ 中点。证明：$EF\parallel$ 平面 $ABCD$。</p>
+</blockquote>
+<ol>
+<li>$E,F$ 是 $PA,PB$ 中点 → 在 $\triangle PAB$ 中 $EF$ 是中位线</li>
+<li>故 $EF\parallel AB$</li>
+<li>$AB\subset$ 平面 $ABCD$，$EF\not\subset$ 平面 $ABCD$</li>
+<li>由线面平行判定定理，$EF\parallel$ 平面 $ABCD$</li>
+<li><strong>检验</strong>：三要素齐全——「面内一条线（AB）」「与它平行（EF∥AB）」「EF 不在面内」，缺一不可。</li>
+</ol>
+<p><strong>通法</strong>：写证明时默念三件套——<strong>找线、证平行（或垂直）、交代在不在面内</strong>。改卷按点给分，漏「EF 不在平面内」要扣 1 分。</p>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 能默写线面平行、线面垂直、面面垂直的判定定理</li>
+<li>[ ] 见到「平面 α⊥平面 β」能立刻反应出「找垂直于交线的线」</li>
+<li>[ ] 见到中点能立刻想到中位线</li>
+<li>[ ] 能讲清翻折前后「什么不变」</li>
+<li>[ ] 证明书写不漏「线不在面内」等关键交代</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E5%90%91%E9%87%8F%E6%B3%95%E6%B1%82%E7%A9%BA%E9%97%B4%E8%A7%92%E4%B8%8E%E8%B7%9D%E7%A6%BB.html">向量法求空间角与距离</a> — 第（2）（3）问配套</li>
+<li><a href="../%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E5%BB%BA%E7%B3%BB%E6%B3%95%E8%A7%A3%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%A4%A7%E9%A2%98%E9%80%9A%E6%B3%95.html">建系法解立体几何大题通法</a></li>
+<li><a href="../%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90_%E7%A9%BA%E9%97%B4%E5%90%91%E9%87%8F%E4%B8%8E%E7%AB%8B%E5%87%A0%E5%B8%B8%E8%A7%81%E9%99%B7%E9%98%B1.html">空间向量与立几常见陷阱</a></li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>踩坑记录：（待国庆模拟考后填写）</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

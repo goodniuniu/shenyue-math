@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【直线问题题型归纳】对称 / 最值 / 直线与线段相交 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【直线问题题型归纳】对称 / 最值 / 直线与线段相交">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【直线问题题型归纳】对称 / 最值 / 直线与线段相交</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>2025.10 四校真题直线题归纳（华附 5/6/17、执信 13/15、铁一 9/16、广附 15）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>题型 1：直线与线段相交求参数范围</strong>（华附题 5 原型）
+直线 $l$ 过定点 $P$，与以 $A,B$ 为端点的线段相交 → $k_l$ 介于 $k_{PA}$ 与 $k_{PB}$ 之间，<strong>但当 $PA,PB$ 分居竖直线两侧时，范围要取「两边」（$k\geq k_1$ 或 $k\leq k_2$）</strong>。先画图判断竖直线是否穿过扇形。</p>
+<p><strong>题型 2：点关于直线对称</strong>（华附题 6 原型）
+两方程联立：①中点在对称轴上；②两点连线与对称轴垂直。对称轴为 $y=x$ 或 $y=-x$ 时可直接换坐标速算。</p>
+<p><strong>题型 3：直线上动点距离和最值</strong>（铁一题 16 原型：$\lvert PA\rvert+\lvert PB\rvert$ 最小 / $\lvert\lvert PA\rvert-\lvert PB\rvert\rvert$ 最大）</p>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>方法</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$A,B$ 在直线异侧，求 $\lvert PA\rvert+\lvert PB\rvert$ 最小</td>
+<td>直接连 $AB$，交点即 $P$</td>
+<td>最小值 $=\lvert AB\rvert$</td>
+</tr>
+<tr>
+<td>$A,B$ 在直线同侧，求 $\lvert PA\rvert+\lvert PB\rvert$ 最小</td>
+<td>作 $A$ 关于直线的对称点 $A'$，连 $A'B$</td>
+<td>最小值 $=\lvert A'B\rvert$（将军饮马）</td>
+</tr>
+<tr>
+<td>求 $\lvert\lvert PA\rvert-\lvert PB\rvert\rvert$ 最大</td>
+<td>同侧直连、异侧先对称，延长交直线</td>
+<td>最大值 $=\lvert AB\rvert$ 或 $\lvert A'B\rvert$（三角形两边之差小于第三边取等）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>题型 4：过定点直线与坐标轴围成面积最值</strong>（华附 17(2)、广附 15(2) 原型）
+设截距式 $\dfrac{x}{a}+\dfrac{y}{b}=1$（$a,b&gt;0$），点在直线上得约束 $\dfrac{x_0}{a}+\dfrac{y_0}{b}=1$，用基本不等式：$1\geq 2\sqrt{\dfrac{x_0y_0}{ab}}$ → $ab\geq 4x_0y_0$ → $S=\dfrac12 ab\geq 2x_0y_0$，取等条件 $\dfrac{x_0}{a}=\dfrac{y_0}{b}=\dfrac12$。</p>
+<p><strong>题型 5：含参直线讨论</strong>（平行/垂直求参数）
+垂直用万能式 $A_1A_2+B_1B_2=0$；平行用系数成比例后<strong>必须回代排除重合</strong>（多解陷阱）。</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>「将军饮马」是最有名的几何最值故事：将军从军营出发，要到河边让马喝水，再回营地，怎么走最近？答案是把河当镜子，把营地「照」到河对岸，直线一连就是最短路线——因为镜子里外距离相等，折线被拉直了。数学里所有「直线上找一点使距离和最小」都是这个故事。距离<strong>差</strong>最大则反过来：三角形两边之差永远小于第三边，把三点拉到一条线上时取到最大。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（铁一卷题 16(1) 原型）：$A(2,1)$，$B(1,2)$，在直线 $l:y=x$ 上求一点 $P$ 使 $\lvert PA\rvert+\lvert PB\rvert$ 最小。</p>
+</blockquote>
+<ol>
+<li><strong>判同侧异侧</strong>：代入 $y-x$：$A$ 得 $-1&lt;0$，$B$ 得 $1&gt;0$ → 异侧</li>
+<li>异侧直接连 $AB$：与 $y=x$ 的交点即 $P$</li>
+<li>直线 $AB$：斜率 $\dfrac{2-1}{1-2}=-1$，方程 $y-1=-(x-2)$ 即 $x+y=3$</li>
+<li>联立 $y=x$ 得 $P\left(\dfrac32,\dfrac32\right)$，最小值 $\lvert AB\rvert=\sqrt2$</li>
+<li><strong>检验</strong>：若判成同侧用了对称点，会得多余计算；异侧直连才对。$P$ 在线段 $AB$ 上，和确实等于 $\lvert AB\rvert$ ✓</li>
+</ol>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 会判「直线与线段相交」的斜率范围（含竖直线穿过的反向情况）</li>
+<li>[ ] 会用两方程求点关于直线的对称点</li>
+<li>[ ] 能讲清将军饮马的对称原理，区分「和最小」与「差最大」</li>
+<li>[ ] 会用截距式 + 基本不等式求围成面积最值，记得取等条件</li>
+<li>[ ] 平行求参会回代排除重合</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="../%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E7%9B%B4%E7%BA%BF%E4%B8%8E%E6%96%B9%E7%A8%8B.html">直线与方程</a> — 公式基础</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E6%95%B0%E5%BD%A2%E7%BB%93%E5%90%88.html">数形结合</a> — 本卡题型的思想根源</li>
+<li><a href="../%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90_%E7%A9%BA%E9%97%B4%E5%90%91%E9%87%8F%E4%B8%8E%E7%AB%8B%E5%87%A0%E5%B8%B8%E8%A7%81%E9%99%B7%E9%98%B1.html">空间向量与立几常见陷阱</a></li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>踩坑记录：（待国庆模拟考后填写）</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

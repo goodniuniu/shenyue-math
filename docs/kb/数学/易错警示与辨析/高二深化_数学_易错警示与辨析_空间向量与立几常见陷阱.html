@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【空间向量与立几常见陷阱】月考踩坑清单 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【空间向量与立几常见陷阱】月考踩坑清单">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【空间向量与立几常见陷阱】月考踩坑清单</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>2025.10 四校真题选择题错误选项与解答题易丢分点归纳（含直线部分）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<h3>陷阱 1：线面角公式记成 cos</h3>
+<p>线面角 $\theta$ 满足 $\sin\theta=\dfrac{\lvert\vec{a}\cdot\vec{n}\rvert}{\lvert\vec{a}\rvert\lvert\vec{n}\rvert}$——<strong>出来的是 sin</strong>（因为 $\theta$ 是线与面的角，等于 90° 减去线与法向量的角）。直接把 $\cos\langle\vec{a},\vec n\rangle$ 当线面角余弦是头号错误。</p>
+<h3>陷阱 2：异面直线所成角忘取绝对值</h3>
+<p>异面直线所成角范围是 $(0,90°]$，数量积算出负值必须取绝对值。算出 $\cos\theta=-\dfrac12$ 直接写 $\theta=120°$ 全错。</p>
+<h3>陷阱 3：二面角无脑取绝对值</h3>
+<p>「两平面夹角」$\in[0,90°]$ 取绝对值没问题；但「二面角」$\in[0,180°]$，必须看图（或设二面角棱上的方向）判断锐钝，钝二面角取绝对值就丢了符号分。</p>
+<h3>陷阱 4：法向量不验算</h3>
+<p>法向量求完不回代验证 $\vec n\cdot\vec u=0$、$\vec n\cdot\vec v=0$，一个坐标抄错带崩后面三问。花 10 秒验算是全卷回报率最高的动作。</p>
+<h3>陷阱 5：动点参数忘验范围</h3>
+<p>设 $P=A+\lambda\vec{AB}$ 解出 $\lambda$ 后，<strong>必须检查 $\lambda\in[0,1]$</strong>（或题给范围）。解出 $\lambda=2$ 直接作答，等于白算（广附 19(3) 的坑）。</p>
+<h3>陷阱 6：翻折前后关系乱搬</h3>
+<p>翻折只保证<strong>同一半平面内</strong>的长度角度不变；跨过折痕的关系（如翻折后两点间距离）必须重新算，不能照抄折叠前的值。</p>
+<h3>陷阱 7：「截距相等」漏掉过原点</h3>
+<p>截距相等包含「两截距都是 0」——直线过原点。只设截距式 $\dfrac{x}{a}+\dfrac{y}{b}=1$ 会漏掉整条过原点的直线（华附 9D、广附 15(1) 的坑）。同理「截距互为相反数」「截距绝对值相等」都要先讨论原点。</p>
+<h3>陷阱 8：垂直用 $k_1k_2=-1$ 漏掉斜率不存在</h3>
+<p>$k_1k_2=-1$ 只在两斜率都存在时有效。万能判定是 $A_1A_2+B_1B_2=0$（一般式），自动包含竖直线。设点斜式前先问自己：竖直线行不行？</p>
+<h3>陷阱 9：平行求参不回代排除重合</h3>
+<p>$A_1B_2=A_2B_1$ 解出的参数可能使两直线<strong>重合</strong>而不是平行，必须回代验证 $C$ 项不成比例，多解要舍。</p>
+<h3>陷阱 10：向量共线与共面混用</h3>
+<p>证明四点共面用 $\vec{OP}=x\vec{OA}+y\vec{OB}+z\vec{OC}$（$x+y+z=1$）；两向量共线用 $\vec a=\lambda\vec b$。把「共线」当「共面」判（或反之）是多选题常见错误项（广附题 9C）。</p>
+<hr />
+<h2>使用方法</h2>
+<ul>
+<li>模拟考复盘时逐条对照，踩中的坑在此卡片备注栏记录「日期 + 题号」。</li>
+<li>考前 10 分钟只看本卡 + <a href="../%E6%A6%82%E5%BF%B5%E6%A3%80%E9%AA%8C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A6%82%E5%BF%B5%E6%A3%80%E9%AA%8C_%E7%A9%BA%E9%97%B4%E5%90%91%E9%87%8F%E4%B8%8E%E7%9B%B4%E7%BA%BF%E8%BF%87%E5%85%B330%E9%97%AE.html">过关 30 问</a> 的错题清单。</li>
+</ul>
+<hr />
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>陷阱清单就是<strong>出题人的挖坑地图</strong>。出题人不想考你背没背公式，他想考你有没有<strong>多想一步</strong>：线面角出来的是 sin 还是 cos？截距相等过不过原点？解出的 $\lambda$ 在不在 $[0,1]$？每条陷阱背后都是一句「再多想一步」。考前 10 分钟不看公式，就看这张地图。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（华附卷题 9 原型改编）：下列说法正确的是？
+A. 直线 $2x-y+1=0$ 的倾斜角为 $\arctan 2$
+B. 过点 $P$ 且在两轴上截距相等的直线只有一条
+C. 斜率乘积为 $-1$ 是两直线垂直的充要条件
+D. 直线 $(2x+y-1)+m(x-y+2)=0$ 恒过定点</p>
+</blockquote>
+<ol>
+<li>A：$k=2=\tan\alpha$ 且 $\alpha\in[0,\pi)$，$\alpha=\arctan 2$ ✓</li>
+<li>B：截距相等含过原点情形，<strong>有两条</strong> → ❌（陷阱 7）</li>
+<li>C：斜率不存在时也可能垂直（一水平一竖直），是充分不必要条件 → ❌（陷阱 8）</li>
+<li>D：令 $2x+y-1=0$ 与 $x-y+2=0$ 联立，解得定点 ✓ → <strong>选 AD</strong></li>
+</ol>
+<p><strong>通法</strong>：概念辨析题每个选项先问「它踩的是哪条陷阱」，比凭感觉快得多。</p>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 10 条陷阱能不看卡复述至少 6 条</li>
+<li>[ ] 每条陷阱能举出一个「错误说法」的例子</li>
+<li>[ ] 模拟考踩过的坑已用「日期+题号」记在备注栏</li>
+<li>[ ] 考前 10 分钟只看本卡 + 过关 30 问错题</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="../%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E5%90%91%E9%87%8F%E6%B3%95%E6%B1%82%E7%A9%BA%E9%97%B4%E8%A7%92%E4%B8%8E%E8%B7%9D%E7%A6%BB.html">向量法求空间角与距离</a></li>
+<li><a href="../%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E7%9B%B4%E7%BA%BF%E4%B8%8E%E6%96%B9%E7%A8%8B.html">直线与方程</a></li>
+<li><a href="../%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E5%BB%BA%E7%B3%BB%E6%B3%95%E8%A7%A3%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%A4%A7%E9%A2%98%E9%80%9A%E6%B3%95.html">建系法解立体几何大题通法</a></li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>踩坑记录：（待国庆模拟考后填写）</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

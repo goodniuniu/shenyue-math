@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>家长提问卡 · 费曼回话题库（30 问） · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="家长照原话问、看关键词打钩：空间向量12问+立几证明8问+直线与方程10问，每天睡前15分钟">
+<link rel="stylesheet" href="assets/style.css">
+
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<script defer src="assets/katex/katex.min.js"></script>
+<script defer src="assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="index.html">首页</a>
+<a href="plan.html">7天辅导计划</a>
+<a href="parent-guide.html">速成指南·空间向量</a>
+<a href="parent-questions.html">提问卡</a>
+<a href="holiday-framework.html">长假专项框架</a>
+<a href="kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>家长提问卡 · 费曼回话题库（30 问）</h1>
+<blockquote>
+<p><strong>用法</strong>：每天睡前 15 分钟，您照着左列<strong>原话问</strong>，孩子口头回答。
+您只需要对照「过关信号」里的关键词——<strong>意思对就算过</strong>，不要求一字不差。
+答得磕磕绊绊 → 标记 ⚠️，明天再问一次；完全答不上 → 标记 ❌，去右列指路的卡片复习。
+您的角色是<strong>提问的记者</strong>，不是阅卷的老师。孩子讲错时不要纠正，说「哦？再讲讲」就好。</p>
+</blockquote>
+<hr />
+<h2>一、空间向量（12 问）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>您这样问</th>
+<th>过关信号（听到这些意思就✓）</th>
+<th>不会就去看</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&quot;空间向量到底是个啥？跟高一学的平面向量啥关系？&quot;</td>
+<td>带方向的量；平面向量的推广，多一个分量，运算法则全一样</td>
+<td>核心卡《空间向量及其运算》</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&quot;两个向量点乘（数量积）是啥意思？给我打个比方&quot;</td>
+<td>衡量「顺路程度」；同向最大、垂直为 0、反向为负</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&quot;算出来数量积等于 0，说明啥？&quot;</td>
+<td>两向量垂直——所以证垂直不用画图，算一算就行</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&quot;法向量是啥？为啥求角度都要先找它？&quot;</td>
+<td>垂直戳出平面的「旗杆」；有了它，角度问题都变成向量夹角</td>
+<td>核心卡《向量法求空间角与距离》</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&quot;法向量怎么求？步骤说说&quot;</td>
+<td>面内找两个不共线向量，设法向量坐标，列两个点积等于 0 的方程</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&quot;异面直线所成角，公式里为啥要加绝对值？&quot;</td>
+<td>异面角范围 0 到 90 度，数量积可能为负，取绝对值</td>
+<td>同上 + 易错卡</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&quot;求线面角，公式出来的是 sin 还是 cos？为啥？&quot;</td>
+<td><strong>sin</strong>；线面角 = 90° 减线与法向量的角</td>
+<td>同上（最易错点）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&quot;二面角和两个平面的夹角，是一回事吗？&quot;</td>
+<td>不是；夹角只取 0–90°，二面角可以钝角，要看图判断</td>
+<td>同上 + 易错卡</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&quot;点到平面的距离，用向量怎么求？&quot;</td>
+<td>连到面上任一点，投影到法向量方向：$d=\lvert\vec{AP}\cdot\vec n\rvert/\lvert\vec n\rvert$</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&quot;四个点共面，用向量怎么判断？&quot;</td>
+<td>$\vec{OP}=x\vec{OA}+y\vec{OB}+z\vec{OC}$ 且系数和等于 1</td>
+<td>核心卡《空间向量及其运算》</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&quot;平行六面体的体对角线向量，怎么表示？&quot;</td>
+<td>共顶点三条棱向量之和；模长平方展开有 6 项</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>12</td>
+<td>&quot;建系法五步走，给我背一遍&quot;</td>
+<td>找三垂直→写坐标→求向量→套公式→检验</td>
+<td>题型卡《建系法解立体几何大题通法》</td>
+</tr>
+</tbody>
+</table>
+<h2>二、立体几何证明（8 问）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>您这样问</th>
+<th>过关信号（听到这些意思就✓）</th>
+<th>不会就去看</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13</td>
+<td>&quot;证线面平行，要去平面里找什么？&quot;</td>
+<td>找一条与它平行的线；还要交代这条线不在面内</td>
+<td>核心卡《立体几何平行与垂直证明》</td>
+</tr>
+<tr>
+<td>14</td>
+<td>&quot;证线面垂直，垂直一条线够不够？&quot;</td>
+<td>不够，要垂直面内<strong>两条相交</strong>直线</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>15</td>
+<td>&quot;题目给了两个中点，你第一个该想到什么？&quot;</td>
+<td>中位线——平行且等于底边一半</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>16</td>
+<td>&quot;已知两个平面互相垂直，接下来该找什么？&quot;</td>
+<td>在一个面内找垂直于交线的直线，它垂直另一个面</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>17</td>
+<td>&quot;翻折前后，什么保持不变？&quot;</td>
+<td>同一半平面内的长度、角度、垂直关系；跨过折痕的要重算</td>
+<td>同上 + 易错卡</td>
+</tr>
+<tr>
+<td>18</td>
+<td>&quot;动点问题，那个 λ 是啥意思？算完要检查什么？&quot;</td>
+<td>表示动点在线段上的位置比例；要检查 λ 在 [0,1] 里</td>
+<td>题型卡《建系法解立体几何大题通法》</td>
+</tr>
+<tr>
+<td>19</td>
+<td>&quot;新定义题（比如完美三棱锥）没见过怎么办？&quot;</td>
+<td>把定义逐句翻译成学过的东西，再算；不慌</td>
+<td>思想方法卡《转化化归》</td>
+</tr>
+<tr>
+<td>20</td>
+<td>&quot;立几大题第（1）问和第（2）问，方法上有啥分工？&quot;</td>
+<td>（1）用综合法证平行垂直；（2）起建系用向量算角度距离</td>
+<td>两张核心卡</td>
+</tr>
+</tbody>
+</table>
+<h2>三、直线与方程（10 问）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>您这样问</th>
+<th>过关信号（听到这些意思就✓）</th>
+<th>不会就去看</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>&quot;斜率是啥？给我用山坡打个比方&quot;</td>
+<td>山坡陡度；正的上坡负的下坡，竖直悬崖斜率不存在</td>
+<td>核心卡《直线与方程》</td>
+</tr>
+<tr>
+<td>22</td>
+<td>&quot;直线方程有五种形式，哪种是万能的？截距式有啥缺点？&quot;</td>
+<td>一般式万能；截距式不能表示竖直、水平和<strong>过原点</strong>的线</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>23</td>
+<td>&quot;过一点、两轴截距相等的直线有几条？为啥？&quot;</td>
+<td><strong>两条</strong>：一条截距式，一条过原点（截距都是 0）</td>
+<td>同上 + 易错卡（最易错）</td>
+</tr>
+<tr>
+<td>24</td>
+<td>&quot;判断两直线垂直，最稳的式子是啥？&quot;</td>
+<td>$A_1A_2+B_1B_2=0$（万能，含斜率不存在）</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>25</td>
+<td>&quot;点到直线距离公式背一下&quot;</td>
+<td>$d=\lvert Ax_0+By_0+C\rvert/\sqrt{A^2+B^2}$</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>26</td>
+<td>&quot;求点关于直线的对称点，列哪两个方程？&quot;</td>
+<td>中点在对称轴上；两点连线与对称轴垂直</td>
+<td>题型卡《直线问题题型归纳》</td>
+</tr>
+<tr>
+<td>27</td>
+<td>&quot;将军饮马是啥故事？数学上怎么用？&quot;</td>
+<td>同侧两点，作对称点把折线拉直，距离和最小</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>28</td>
+<td>&quot;含参数的直线，怎么找它恒过的定点？&quot;</td>
+<td>把参数两边的部分分别令为 0，联立解出定点</td>
+<td>核心卡《直线与方程》</td>
+</tr>
+<tr>
+<td>29</td>
+<td>&quot;直线和一条线段相交，斜率范围怎么定？&quot;</td>
+<td>定点到线段两端斜率之间；竖直线穿过时要取两边</td>
+<td>题型卡《直线问题题型归纳》</td>
+</tr>
+<tr>
+<td>30</td>
+<td>&quot;求直线跟坐标轴围成三角形面积最小值，用什么工具？&quot;</td>
+<td>截距式 + 基本不等式，记得验证取等条件</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>提问小技巧（给家长）</h2>
+<ol>
+<li><strong>追问比评判有用</strong>：孩子答完，您就问「为啥呢？」「能给妈妈/爸爸举个生活中的例子吗？」——讲出例子才算真懂。</li>
+<li><strong>错了别纠正</strong>：说「这个我有点没听懂，你再讲讲？」让孩子自己发现矛盾。您一纠正，「小老师」就变回「被检查的学生」了。</li>
+<li><strong>一次 5 题就够</strong>：每天 10–15 分钟，保持轻松。问完夸具体行为（「这个旗杆的比喻真清楚」），不夸聪明。</li>
+<li><strong>⚠️❌ 记号直接写在打印纸上</strong>，周日复盘时告诉 AI，它会更新状态表。</li>
+</ol>
+<h2>与概念检验卷的分工</h2>
+<ul>
+<li><strong>概念检验 30 问</strong>（打印包）：孩子<strong>自己笔答</strong>，用于系统摸底（假期第一天用）。</li>
+<li><strong>本提问卡</strong>：家长<strong>口头提问</strong>，用于日常碎片复习（每天睡前用）。</li>
+<li>两者答案互通：提问卡 ⚠️❌ 多的章节，回去重刷对应的检验卷。</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印速查表</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

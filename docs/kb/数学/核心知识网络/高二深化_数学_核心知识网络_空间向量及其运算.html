@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【空间向量及其运算】从平面向量到空间向量 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【空间向量及其运算】从平面向量到空间向量">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【空间向量及其运算】从平面向量到空间向量</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>人教 A 版选必一 1.1–1.3 节 + 2025.10 四校真题（华附题 1/2/10、广附题 3/9、执信题 4、铁一题 19）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★☆☆☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>1. 空间向量 = 平面向量的自然推广</strong>：所有运算法则（加减、数乘、数量积）在空间同样成立。</p>
+<p><strong>2. 坐标运算三件套</strong>：设 $\vec{a}=(x_1,y_1,z_1)$，$\vec{b}=(x_2,y_2,z_2)$</p>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>公式</th>
+<th>几何意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加减/数乘</td>
+<td>$\vec{a}\pm\vec{b}=(x_1\pm x_2,\ y_1\pm y_2,\ z_1\pm z_2)$</td>
+<td>平移合成</td>
+</tr>
+<tr>
+<td>数量积</td>
+<td>$\vec{a}\cdot\vec{b}=x_1x_2+y_1y_2+z_1z_2$</td>
+<td>投影的乘积</td>
+</tr>
+<tr>
+<td>模长</td>
+<td>$\lvert\vec{a}\rvert=\sqrt{x_1^2+y_1^2+z_1^2}$</td>
+<td>空间距离</td>
+</tr>
+<tr>
+<td>夹角</td>
+<td>$\cos\langle\vec{a},\vec{b}\rangle=\dfrac{\vec{a}\cdot\vec{b}}{\lvert\vec{a}\rvert\lvert\vec{b}\rvert}$</td>
+<td>方向差异</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. 三个判定（真题高频）</strong>：</p>
+<ul>
+<li>垂直：$\vec{a}\perp\vec{b} \Leftrightarrow \vec{a}\cdot\vec{b}=0$</li>
+<li>平行（共线）：$\vec{a}\parallel\vec{b} \Leftrightarrow \vec{a}=\lambda\vec{b}$（坐标对应成比例）</li>
+<li>四点共面：对空间任意一点 $O$，$\vec{OP}=x\vec{OA}+y\vec{OB}+z\vec{OC}$ 且 $x+y+z=1$ $\Leftrightarrow$ $P,A,B,C$ 共面（广附题 9C 原型）</li>
+</ul>
+<p><strong>4. 平行六面体「对角线向量」公式</strong>：以 $A$ 为顶点的三条棱向量为 $\vec{a},\vec{b},\vec{c}$，则体对角线 $\vec{AC_1}=\vec{a}+\vec{b}+\vec{c}$，其模长平方 $\lvert\vec{a}+\vec{b}+\vec{c}\rvert^2=a^2+b^2+c^2+2\vec{a}\cdot\vec{b}+2\vec{b}\cdot\vec{c}+2\vec{a}\cdot\vec{c}$（华附题 10、广附题 8 都是这个套路）。</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>向量就是<strong>带方向的搬家指令</strong>：「往东 3 步、往北 4 步、往上 2 步」就是一个空间向量，三个数 $(3,4,2)$ 是它的坐标。两个向量相加就是两条搬家指令连着走。数量积呢？想象两支队伍各走各的，数量积衡量他们「顺路程度」：方向完全一致时最大，垂直时为 0，反方向时为负。所以<strong>判断垂直不用画图，算一下数量积是不是 0 就行</strong>——这就是向量法最大的好处：把几何问题变成算数问题。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（执信卷题 4 原型）：已知空间三点 $A(1,0,1)$，$B(2,1,0)$，$C(0,1,2)$，求以 $\vec{AB}$、$\vec{AC}$ 为邻边的平行四边形的面积。</p>
+</blockquote>
+<ol>
+<li>写向量：$\vec{AB}=(1,1,-1)$，$\vec{AC}=(-1,1,1)$</li>
+<li>面积 $=\lvert\vec{AB}\rvert\cdot\lvert\vec{AC}\rvert\sin\theta$，先算数量积：$\vec{AB}\cdot\vec{AC}=-1+1-1=-1$</li>
+<li>模长：$\lvert\vec{AB}\rvert=\sqrt3$，$\lvert\vec{AC}\rvert=\sqrt3$，故 $\cos\theta=\dfrac{-1}{3}$</li>
+<li>$\sin\theta=\sqrt{1-\dfrac19}=\dfrac{2\sqrt2}{3}$，面积 $S=\sqrt3\cdot\sqrt3\cdot\dfrac{2\sqrt2}{3}=2\sqrt2$</li>
+<li><strong>检验</strong>：数量积为负说明夹角为钝角，面积与 $\cos$ 正负无关（用 $\sin$），量纲是平方单位，合理。</li>
+</ol>
+<p><strong>通法</strong>：平行四边形面积 $=\sqrt{\lvert\vec{a}\rvert^2\lvert\vec{b}\rvert^2-(\vec{a}\cdot\vec{b})^2}$（不用先求角，一步到位）。</p>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 能默写数量积坐标公式、模长公式、夹角余弦公式</li>
+<li>[ ] 能讲清垂直 $\Leftrightarrow$ 数量积为 0、平行 $\Leftrightarrow$ 成比例</li>
+<li>[ ] 能默写四点共面的系数条件 $x+y+z=1$ 并讲出道理</li>
+<li>[ ] 会用 $\vec{a}+\vec{b}+\vec{c}$ 表示平行六面体体对角线并展开模长平方</li>
+<li>[ ] 能讲清「向量把几何翻译成代数」这件事（数量积=顺路程度）</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E5%90%91%E9%87%8F%E6%B3%95%E6%B1%82%E7%A9%BA%E9%97%B4%E8%A7%92%E4%B8%8E%E8%B7%9D%E7%A6%BB.html">向量法求空间角与距离</a> — 本卡的直接应用</li>
+<li><a href="../%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E5%BB%BA%E7%B3%BB%E6%B3%95%E8%A7%A3%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%A4%A7%E9%A2%98%E9%80%9A%E6%B3%95.html">建系法解立体几何大题通法</a></li>
+<li><a href="../%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90_%E7%A9%BA%E9%97%B4%E5%90%91%E9%87%8F%E4%B8%8E%E7%AB%8B%E5%87%A0%E5%B8%B8%E8%A7%81%E9%99%B7%E9%98%B1.html">空间向量与立几常见陷阱</a></li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>踩坑记录：（待国庆模拟考后填写）</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

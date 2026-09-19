@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【建系法解立体几何大题通法】解答题程序化五步走 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【建系法解立体几何大题通法】解答题程序化五步走">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【建系法解立体几何大题通法】解答题程序化五步走</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>2025.10 四校真题立几解答题归纳（华附 16/18/19、广附 17/19、执信 16/18、铁一 18/19）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>四校真题立几大题的标准结构</strong>：(1) 证明平行/垂直（综合法）→ (2) 求角度或距离（建系法）→ (3) 动点/最值/存在性（建系 + 设参数）。</p>
+<p><strong>程序化五步</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>做什么</th>
+<th>得分点/易错点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① 找三垂直</td>
+<td>在图中找两两垂直的三条直线作坐标轴（底面直角、线面垂直、正方体棱）</td>
+<td>找不到就自己造：取中点连辅助线；<strong>必须先证明或说明三轴两两垂直</strong></td>
+</tr>
+<tr>
+<td>② 写坐标</td>
+<td>设棱长（没给就设 $a$ 或 1），写出全部用到的点坐标</td>
+<td>坐标抄错是全题最大失分源，写完<strong>回代检查 2 个点</strong></td>
+</tr>
+<tr>
+<td>③ 求向量</td>
+<td>方向向量直接减；法向量列两个点积方程取整数解</td>
+<td>法向量取 $z=1$ 或公分母最小的整数解</td>
+</tr>
+<tr>
+<td>④ 套公式</td>
+<td>异面角/线面角/二面角/距离四套公式</td>
+<td>线面角是 sin；异面角取绝对值；二面角判锐钝</td>
+</tr>
+<tr>
+<td>⑤ 检验作答</td>
+<td>范围检查（sin/cos ≤1，角度范围），写「所以……为……」</td>
+<td>动点题最后要回代验证参数在允许范围内</td>
+</tr>
+</tbody>
+</table>
+<p><strong>动点/存在性问题套路</strong>（四校 11 题、18/19(3) 高频）：设动点 $P=A+\lambda\vec{AB}$（$\lambda\in[0,1]$），把目标量（角度/距离/余弦）表示为 $\lambda$ 的函数，解方程或求最值，<strong>最后必须说明 $\lambda$ 是否落在 $[0,1]$</strong>。</p>
+<p><strong>翻折题套路</strong>（华附 18、广附 19）：翻折前后同一半平面内关系不变 → 找垂直于交线的线 → 以交线和垂线建系 → 翻折角用高度坐标体现。</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>建系法就是<strong>给几何体贴一张三维坐标网格</strong>：一旦每个点都有了「门牌号」（坐标），证明垂直、求角度全部变成按计算器。难的不是算，是<strong>给网格选墙角</strong>——好墙角要三条棱互相垂直，像房间角落那样。正方体、直棱柱的墙角现成；斜棱锥要先证明某条线垂直底面，才能用它当竖轴。所以第（1）问的证明常常就是在为第（2）问的建系<strong>铺路</strong>。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（执信卷题 18(3) 原型）：四棱锥中 $PA\perp$ 底面，底面为矩形，点 $M$ 在棱 $PC$ 上。确定 $M$ 位置使直线 $BM$ 与平面 $PAC$ 所成角的余弦值为给定值。</p>
+</blockquote>
+<ol>
+<li><strong>建系</strong>：以 $A$ 为原点，$AB,AD,AP$ 为 $x,y,z$ 轴，写出 $B,C,P$ 坐标</li>
+<li><strong>设参</strong>：$M=P+\lambda\vec{PC}$，$\lambda\in[0,1]$，写出 $M$ 的含 $\lambda$ 坐标</li>
+<li><strong>表示目标</strong>：$\sin\theta=\dfrac{\lvert\vec{BM}\cdot\vec{n}\rvert}{\lvert\vec{BM}\rvert\lvert\vec{n}\rvert}$（$\vec n$ 为平面 $PAC$ 法向量），由 $\cos\theta$ 给定值换算 $\sin\theta$</li>
+<li><strong>解方程</strong>：得到关于 $\lambda$ 的方程，解出 $\lambda$</li>
+<li><strong>检验</strong>：$\lambda$ 是否在 $[0,1]$？不在则「不存在这样的点」；在则写出 $M$ 位置（如 $PM:MC$ 的比值）。</li>
+</ol>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 能背出五步走并讲清每步的坑</li>
+<li>[ ] 会给正方体、直棱柱、有一条侧棱垂直底面的棱锥建系</li>
+<li>[ ] 会用 $P=A+\lambda\vec{AB}$ 表示动点并说明 $\lambda$ 范围</li>
+<li>[ ] 能讲清翻折题「什么不变、怎么建系」</li>
+<li>[ ] 写完坐标有回代检查的习惯</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="../%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E5%90%91%E9%87%8F%E6%B3%95%E6%B1%82%E7%A9%BA%E9%97%B4%E8%A7%92%E4%B8%8E%E8%B7%9D%E7%A6%BB.html">向量法求空间角与距离</a> — 四套公式</li>
+<li><a href="../%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C_%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%B9%B3%E8%A1%8C%E4%B8%8E%E5%9E%82%E7%9B%B4%E8%AF%81%E6%98%8E.html">立体几何平行与垂直证明</a> — 第（1）问配套</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E8%BD%AC%E5%8C%96%E5%8C%96%E5%BD%92.html">转化化归</a> — 几何问题代数化的思想根源</li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>踩坑记录：（待国庆模拟考后填写）</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

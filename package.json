@@ -1,8 +1,8 @@
 {
-  "name": "shenyue-physics-learning",
+  "name": "shenyue-math-learning",
   "private": true,
   "version": "1.0.0",
-  "description": "申悦学习 · AI 指导物理学习（GitHub Pages 静态网站，站点源在 docs/）",
+  "description": "申悦学习 · AI 指导数学学习（GitHub Pages 静态网站，站点源在 docs/）",
   "scripts": {
     "dev": "vite docs --host 0.0.0.0 --config vite.config.js",
     "build": "python build_site.py"

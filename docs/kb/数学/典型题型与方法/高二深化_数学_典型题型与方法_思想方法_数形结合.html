@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【思想方法 · 数形结合】看到式子想图形，看到图形列式子 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【思想方法 · 数形结合】看到式子想图形，看到图形列式子">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【思想方法 · 数形结合】看到式子想图形，看到图形列式子</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>四大数学思想之一；2025.10 四校真题应用（铁一 7/8/16、华附 5/17、执信 10、广附 6/7）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>一句话</strong>：代数式有几何意义，几何量能列代数式——来回翻译，哪边好算用哪边。</p>
+<p><strong>高频翻译对照表（当前学期）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>代数条件</th>
+<th>几何翻译</th>
+<th>典型用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\dfrac{y_2-y_1}{x_2-x_1}$</td>
+<td>两点连线的斜率</td>
+<td>分式结构想斜率（线性规划/取值范围题）</td>
+</tr>
+<tr>
+<td>$\sqrt{(x-a)^2+(y-b)^2}$</td>
+<td>点到点 $(a,b)$ 的距离</td>
+<td>根式平方和想距离（铁一题 16 距离和最值）</td>
+</tr>
+<tr>
+<td>$x^2+y^2=r^2$</td>
+<td>圆心在原点的圆</td>
+<td>复数模 $\lvert z\rvert$ 满足方程想圆（铁一题 7）</td>
+</tr>
+<tr>
+<td>$\lvert\vec{a}+\vec{b}\rvert$、$\lvert\vec{a}-\vec{b}\rvert$</td>
+<td>平行四边形两条对角线</td>
+<td>向量模长想图形（广附题 9）</td>
+</tr>
+<tr>
+<td>$f(x)$ 在区间有零点</td>
+<td>图象与 $x$ 轴有交点</td>
+<td>零点问题画图象（铁一题 8、执信题 10C）</td>
+</tr>
+<tr>
+<td>$y=kx+b$ 中 $k$ 的范围</td>
+<td>直线绕定点转动的扇形</td>
+<td>直线与线段相交（华附题 5）</td>
+</tr>
+<tr>
+<td>基本不等式求最值</td>
+<td>对称结构、取等条件即图形的「平衡位置」</td>
+<td>面积最值（华附 17、广附 15）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用仪式</strong>：拿到含参或最值题，先问「这个式子长得像什么几何量」——斜率？距离？面积？翻译成图形后，答案经常一眼看出。</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>数和形是<strong>同一枚硬币的两面</strong>。就像导航软件：地址（数）和地图上的点（形）是同一个地方。有些路在地址簿里查很麻烦，地图上一看就明白。比如「$\sqrt{x^2+y^2}$ 的最小值」，硬算很难，但认出它是「原点到点的距离」，问题就变成「这个点在哪条线上、原点到线最近多远」——画条垂线就出答案。孩子卡壳时，提醒一句：<strong>画个图试试</strong>。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（铁一卷题 16(2) 原型）：$A,B$ 为定点，$P$ 在直线 $l$ 上动，求 $\lvert\lvert PA\rvert-\lvert PB\rvert\rvert$ 的最大值。</p>
+</blockquote>
+<ol>
+<li><strong>翻译</strong>：$\lvert\lvert PA\rvert-\lvert PB\rvert\rvert$ 是三角形两边之差</li>
+<li><strong>想图形</strong>：三角形中两边之差 &lt; 第三边，三点共线时取等</li>
+<li>故最大值 $=\lvert AB\rvert$（若 $A,B$ 同侧，延长 $AB$ 与 $l$ 相交时取到；异侧先对称）</li>
+<li><strong>检验</strong>：交点不存在（$AB\parallel l$）时取不到等号，转为趋近值——检查平行特例。</li>
+</ol>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 能背出对照表中至少 5 条翻译</li>
+<li>[ ] 见到分式结构能反应「斜率」，见到根式平方和能反应「距离」</li>
+<li>[ ] 零点/方程根问题会转化为图象交点</li>
+<li>[ ] 做题卡壳时有「先画图」的条件反射</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E7%9B%B4%E7%BA%BF%E9%97%AE%E9%A2%98%E9%A2%98%E5%9E%8B%E5%BD%92%E7%BA%B3.html">直线问题题型归纳</a> — 数形结合主战场</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E8%BD%AC%E5%8C%96%E5%8C%96%E5%BD%92.html">转化化归</a> — 姐妹思想</li>
+<li>[函数与方程思想（待建）] — 第三期补充</li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>四大思想分两批建卡：本批 数形结合 + 转化化归；函数与方程、分类讨论待月考分析后补。</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

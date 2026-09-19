@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>家长数学速成指南 · 空间向量与立体几何篇 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="写给很久没碰数学的家长：搬家指令与旗杆类比建立向量直觉、三道能讲给孩子听的例题、批改四问清单">
+<link rel="stylesheet" href="assets/style.css">
+
+<link rel="stylesheet" href="assets/katex/katex.min.css">
+<script defer src="assets/katex/katex.min.js"></script>
+<script defer src="assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="index.html">首页</a>
+<a href="plan.html">7天辅导计划</a>
+<a href="parent-guide.html">速成指南·空间向量</a>
+<a href="parent-questions.html">提问卡</a>
+<a href="holiday-framework.html">长假专项框架</a>
+<a href="kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>家长数学速成指南 · 空间向量与立体几何篇</h1>
+<blockquote>
+<p><strong>写给很久没碰数学的家长</strong>：您不需要会做题。这篇指南用 30 分钟帮您建立「空间向量」的直觉，
+让您能听懂孩子的回讲、问出好问题、看出她卡在哪一步。
+月考范围：选必一《空间向量与立体几何》+《直线与方程》（依据：广州四校 2025.10 月考真题分析）。</p>
+</blockquote>
+<hr />
+<h2>一、30 秒建立直觉：向量 = 带方向的搬家指令</h2>
+<p>孩子这学期学的「空间向量」，听起来吓人，其实就是您每天都在用的东西：</p>
+<ul>
+<li><strong>向量</strong> = 一条带方向的搬家指令：「往东 3 步、往北 4 步、往上 2 步」，写成 $(3,4,2)$ 就是坐标。</li>
+<li><strong>向量相加</strong> = 两条指令连着走。</li>
+<li><strong>数量积</strong>（两个向量点乘）= 衡量两条路线的「顺路程度」：方向完全一致时最大，<strong>垂直时为 0</strong>，反方向为负。</li>
+<li><strong>法向量</strong> = 垂直戳出平面的一根「旗杆」。有了旗杆，所有「线和面夹多少度」的问题都变成「箭和旗杆夹多少度」。</li>
+</ul>
+<p><strong>为什么孩子要学这个</strong>：立体几何以前靠「空间想象力」硬想，现在靠向量<strong>把几何题变成算数题</strong>——想象力不够，计算来凑。这是整个学期最重要的思想。</p>
+<h2>二、月考考什么（一张图看懂）</h2>
+<p>四校真题告诉我们，月考立几大题是固定三步曲：</p>
+<table>
+<thead>
+<tr>
+<th>第几步</th>
+<th>考什么</th>
+<th>孩子要会什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第（1）问</td>
+<td>证明平行/垂直</td>
+<td>中位线、判定定理（送分，书写别漏条件）</td>
+</tr>
+<tr>
+<td>第（2）问</td>
+<td>求角度/距离</td>
+<td><strong>建系五步走</strong>（见下）</td>
+</tr>
+<tr>
+<td>第（3）问</td>
+<td>动点/最值/存在性</td>
+<td>设参数 $\lambda$ 列方程</td>
+</tr>
+</tbody>
+</table>
+<p><strong>建系五步走</strong>（孩子必须倒背如流的流程）：</p>
+<ol>
+<li><strong>找三垂直</strong>——在图里找一个「房间角落」（三条互相垂直的棱）当坐标轴</li>
+<li><strong>写坐标</strong>——给每个点发「门牌号」</li>
+<li><strong>求向量</strong>——方向向量直接减，法向量列两个方程解</li>
+<li><strong>套公式</strong>——四套公式（异面角、线面角、二面角、距离）</li>
+<li><strong>检验</strong>——答案的数值范围对不对</li>
+</ol>
+<h2>三、您能听懂的三道例题（让孩子讲给您听）</h2>
+<p><strong>例 1（垂直判断）</strong>：「为什么两个向量点乘等于 0 就是垂直？」</p>
+<blockquote>
+<p>期待听到的：数量积衡量顺路程度，垂直时一点顺路成分都没有，所以是 0。反过来算出来是 0 就证明垂直了——不用画图。</p>
+</blockquote>
+<p><strong>例 2（线面角）</strong>：「求线面角为什么公式出来是 sin 不是 cos？」</p>
+<blockquote>
+<p>期待听到的：旗杆（法向量）垂直于地面，箭（直线）和旗杆的夹角越接近 90°，箭越平。箭与地面的角 = 90° − 箭与旗杆的角，所以是 sin。</p>
+</blockquote>
+<p><strong>例 3（直线的截距陷阱）</strong>：「过点 $(2,1)$ 截距相等的直线有几条？」</p>
+<blockquote>
+<p>期待听到的：<strong>两条</strong>！一条斜着切（$x+y=3$），一条过原点（$y=x/2$）——过原点时两个截距都是 0，也算「相等」，最容易漏。</p>
+</blockquote>
+<h2>四、批改四问清单（看孩子作业/试卷时用）</h2>
+<p>不用看懂过程，只看四个地方：</p>
+<ol>
+<li><strong>建系了吗？</strong> 立几大题第（2）问起，卷面上应该出现坐标系和一堆点坐标。没有坐标 = 她在硬想，提醒用建系法。</li>
+<li><strong>坐标验了吗？</strong> 问她「你检查过坐标没」——抄错坐标是最大失分源。</li>
+<li><strong>公式套对了吗？</strong> 只记一句：线面角公式出来的是 <strong>sin</strong>。看到她把 cos 直接当线面角答案，就是踩坑了。</li>
+<li><strong>范围验了吗？</strong> 动点题解出的 $\lambda$ 要在 $[0,1]$ 里；sin/cos 的值不能超过 1。</li>
+</ol>
+<h2>五、常见问题答疑</h2>
+<p><strong>Q：孩子说我问的太简单，不想讲怎么办？</strong>
+A：换个角色——您不是考她，是「采访」她：「这个法向量是干嘛的？给我打个比方呗。」被采访的专家最有表达欲。</p>
+<p><strong>Q：她讲错了我能纠正吗？</strong>
+A：不要纠正。说「这个我有点没听懂，你再讲讲？」让她自己发现矛盾。您一纠正，「小老师」就变回「被检查的学生」了。</p>
+<p><strong>Q：立体几何我当年就差，怎么陪她？</strong>
+A：正好！您就大方说「妈妈/爸爸当年空间想象也差，你给我讲讲这个向量法怎么不用想象就能做题」——让她教您一个「差生也能懂」的方法，她的成就感最强。</p>
+<h2>六、每日 15 分钟回讲安排（国庆版）</h2>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>睡前 15 分钟</td>
+<td>用《家长提问卡》问 5 题，意思对就打 ✓</td>
+</tr>
+<tr>
+<td>讲不动的地方</td>
+<td>做记号 ⚠️/❌，第二天告诉 AI「XX 还不懂」</td>
+</tr>
+<tr>
+<td>夸什么</td>
+<td>夸具体行为（「这个旗杆的比方打得真好」），不夸聪明</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 记住：您的角色是<strong>提问的记者</strong>，不是讲课的老师。先有关系，才有成绩。假期首先是假期。</p>
+</blockquote>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印速查表</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>

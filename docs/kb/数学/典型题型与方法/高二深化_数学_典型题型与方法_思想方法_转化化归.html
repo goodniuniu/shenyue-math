@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【思想方法 · 转化化归】把不会的题变成会的题 · 申悦学习 · AI 指导数学学习</title>
+<meta name="description" content="知识库 · 【思想方法 · 转化化归】把不会的题变成会的题">
+<link rel="stylesheet" href="../../../assets/style.css">
+
+<link rel="stylesheet" href="../../../assets/katex/katex.min.css">
+<script defer src="../../../assets/katex/katex.min.js"></script>
+<script defer src="../../../assets/katex/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'$$',right:'$$',display:true},
+    {left:'$',right:'$',display:false}
+  ]});"></script>
+
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="../../../index.html">📐 申悦学习 · AI 指导数学学习</a>
+<nav class="site-nav">
+<a href="../../../index.html">首页</a>
+<a href="../../../plan.html">7天辅导计划</a>
+<a href="../../../parent-guide.html">速成指南·空间向量</a>
+<a href="../../../parent-questions.html">提问卡</a>
+<a href="../../../holiday-framework.html">长假专项框架</a>
+<a href="../../../kb/index.html">知识库</a>
+</nav>
+</div></header>
+<main class="page">
+<h1>【思想方法 · 转化化归】把不会的题变成会的题</h1>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>来源</strong></td>
+<td>四大数学思想之一；2025.10 四校真题应用（四校立几大题、华附 18/广附 19 翻折、铁一 19 新定义）</td>
+</tr>
+<tr>
+<td><strong>时间标签</strong></td>
+<td>#高二深化</td>
+</tr>
+<tr>
+<td><strong>难度</strong></td>
+<td>★★★☆☆</td>
+</tr>
+<tr>
+<td><strong>状态</strong></td>
+<td>❌未理解</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>核心内容</h2>
+<p><strong>一句话</strong>：正面难走就绕道——把陌生问题转化为熟悉问题，把复杂问题拆解为简单问题。</p>
+<p><strong>本学期高频转化方向对照表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>转化方向</th>
+<th>怎么转</th>
+<th>真题例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空间问题 → 平面问题</td>
+<td>截面、展开图、投影</td>
+<td>圆台/圆锥侧面展开求最短路径</td>
+</tr>
+<tr>
+<td>几何关系 → 代数方程</td>
+<td>建系：垂直=数量积为 0，角度=夹角公式</td>
+<td>全部立几解答题第（2）（3）问</td>
+</tr>
+<tr>
+<td>异面直线角 → 相交直线角</td>
+<td>平移其中一条（中位线常是天然平移）</td>
+<td>华附题 5、执信题 5</td>
+</tr>
+<tr>
+<td>二面角 → 两法向量夹角</td>
+<td>求两个平面的法向量</td>
+<td>华附 18(3)、广附 17(2)</td>
+</tr>
+<tr>
+<td>翻折问题 → 平面图形 + 不变量</td>
+<td>翻折前后同一半平面内长度角度不变</td>
+<td>华附 18、广附 19</td>
+</tr>
+<tr>
+<td>动点最值 → 一元函数最值</td>
+<td>设 $\lambda$ 参数化动点，目标量写成 $\lambda$ 的函数</td>
+<td>各卷 11 题、18/19(3)</td>
+</tr>
+<tr>
+<td>新定义题 → 已知知识</td>
+<td>逐句把新定义「翻译」成学过的概念</td>
+<td>铁一 19「完美三棱锥」= 对棱数量积关系、执信 19 新定义函数</td>
+</tr>
+<tr>
+<td>存在性问题 → 方程有解问题</td>
+<td>设存在，列方程，讨论解是否在范围</td>
+<td>广附 19(3)、执信 18(3)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用仪式</strong>：读题卡住时问三个问题——「这题让我求的东西，本质上是什么？」「我学过的哪个工具能碰它？」「能不能先退到简单情形（取特殊值/特殊位置）探路？」</p>
+<h2>🗣️ 费曼讲解（讲给零基础的人听）</h2>
+<p>转化化归就像<strong>汇率兑换</strong>：手里有一种外币（陌生的题），花不出去；换成人民币（学过的知识）就能用了。数学家最喜欢干的事就是「兑换」——立体几何不会算？换成代数（建系）。空间图形想不清？压扁成平面图（截面展开）。题目给了个没听说过的新名词？别慌，把定义逐句翻译，十有八九就是老朋友化了妆。考场上真正的差距，不是谁背得多，是<strong>谁会换</strong>。</p>
+<h2>📝 解题示范（一道典型题完整流程）</h2>
+<blockquote>
+<p>题（铁一卷题 19 原型）：定义「完美三棱锥」：三棱锥 $P$-$ABC$ 满足 $\vec{PA}\cdot\vec{BC}=\vec{PB}\cdot\vec{AC}=\vec{PC}\cdot\vec{AB}$（对棱方向的数量积关系）。判断给定三棱锥是否为完美三棱锥。</p>
+</blockquote>
+<ol>
+<li><strong>翻译新定义</strong>：三个等式本质 = 三组对棱位置关系的代数条件</li>
+<li><strong>转化为计算</strong>：写出各点坐标（或设向量），逐个计算 $\vec{PA}\cdot\vec{BC}$ 等三个数量积</li>
+<li><strong>比对</strong>：三个值相等 → 是；否则不是</li>
+<li><strong>拓展</strong>：由 $\vec{PA}\cdot\vec{BC}=0$ 的特殊情形可发现「对棱垂直」是完美三棱锥的常见实现（正三棱锥即满足）</li>
+<li><strong>检验</strong>：新定义题不需要「见过」，只需要「翻译得对」——把定义式原样代回验算一遍。</li>
+</ol>
+<h2>✅ 复盘要点（自测清单，能讲清即打勾）</h2>
+<ul>
+<li>[ ] 能背出对照表中至少 5 条转化方向</li>
+<li>[ ] 能讲清「建系 = 几何兑换成代数」的道理</li>
+<li>[ ] 翻折题会先找「不变量」再动手</li>
+<li>[ ] 新定义题能做到逐句翻译、不慌不跳步</li>
+<li>[ ] 卡住时会退到特殊值/特殊位置探路</li>
+</ul>
+<hr />
+<h2>关联卡片</h2>
+<ul>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E5%BB%BA%E7%B3%BB%E6%B3%95%E8%A7%A3%E7%AB%8B%E4%BD%93%E5%87%A0%E4%BD%95%E5%A4%A7%E9%A2%98%E9%80%9A%E6%B3%95.html">建系法解立体几何大题通法</a> — 几何→代数的落地流程</li>
+<li><a href="%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E5%85%B8%E5%9E%8B%E9%A2%98%E5%9E%8B%E4%B8%8E%E6%96%B9%E6%B3%95_%E6%80%9D%E6%83%B3%E6%96%B9%E6%B3%95_%E6%95%B0%E5%BD%A2%E7%BB%93%E5%90%88.html">数形结合</a> — 姐妹思想</li>
+<li><a href="../%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90/%E9%AB%98%E4%BA%8C%E6%B7%B1%E5%8C%96_%E6%95%B0%E5%AD%A6_%E6%98%93%E9%94%99%E8%AD%A6%E7%A4%BA%E4%B8%8E%E8%BE%A8%E6%9E%90_%E7%A9%BA%E9%97%B4%E5%90%91%E9%87%8F%E4%B8%8E%E7%AB%8B%E5%87%A0%E5%B8%B8%E8%A7%81%E9%99%B7%E9%98%B1.html">空间向量与立几常见陷阱</a></li>
+</ul>
+<hr />
+<h2>备注</h2>
+<ul>
+<li>四大思想分两批建卡：本批 数形结合 + 转化化归；函数与方程、分类讨论待月考分析后补。</li>
+</ul>
+
+</main>
+<button class="print-btn" onclick="window.print()">🖨️ 打印本页</button>
+<footer class="footer"><div class="wrap">
+<span>陪伴申悦一路到 2028 高考</span>
+<span>内容维护：修改 Markdown 源文件后运行 <code>python build_site.py</code> 重新生成</span>
+</div></footer>
+</body>
+</html>
